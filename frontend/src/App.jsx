@@ -1,10 +1,11 @@
+import SearchBar from "./components/SearchBar";
 import "./App.css";
 
 function App() {
   return (
-    <p className="text-center font-bold bg-red-900 text-white ">
-      UniVerse is Cool !
-    </p>
+    <div className="bg-black h-screen">
+      <SearchBar />
+    </div>
   );
 }
 
