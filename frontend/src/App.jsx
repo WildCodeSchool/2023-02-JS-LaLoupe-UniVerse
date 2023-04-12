@@ -1,13 +1,10 @@
-import Home from "./pages/Home";
-
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-      <p>coucou</p>
-    </div>
+    <p className="text-center font-bold bg-red-900 text-white ">
+      UniVerse is Cool !
+    </p>
   );
 }
 
