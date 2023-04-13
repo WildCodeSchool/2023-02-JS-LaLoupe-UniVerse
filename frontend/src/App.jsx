@@ -3,6 +3,7 @@ import NavBarPc from "./components/NavBarPC";
 import SearchBar from "./components/SearchBar";
 import "./App.css";
 import Header from "./components/Header";
+import CardArtiste from "./components/CardArtiste";
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
       <NavBarPc />
       <Header />
       <SearchBar />
+      <div className="flex overflow-scroll">
+        <CardArtiste />
+      </div>
     </div>
   );
 }
