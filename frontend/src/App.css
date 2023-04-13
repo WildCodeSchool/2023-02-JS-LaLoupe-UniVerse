@@ -11,3 +11,7 @@ body {
   font-family: "Revalia";
   src: url("../src/assets/Revalia/OFL.ttf");
 }
+
+body {
+  background-color: black;
+}
