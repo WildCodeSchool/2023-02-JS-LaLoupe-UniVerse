@@ -1,8 +1,11 @@
+import SearchBar from "./components/SearchBar";
 import "./App.css";
 import Header from "./components/Header";
 
 function App() {
+
   return <Header />;
+
 }
 
 export default App;
