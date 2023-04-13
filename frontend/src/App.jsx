@@ -4,7 +4,10 @@ import Header from "./components/Header";
 
 function App() {
 
-  return <Header />;
+  return <div>
+    <Header />
+    <SearchBar/>
+  </div>
 }
 
 export default App;
