@@ -5,3 +5,7 @@
 body {
   background-color: black;
 }
+@font-face {
+  font-family: "Revalia";
+  src: url("../src/assets/Revalia/OFL.ttf");
+}
