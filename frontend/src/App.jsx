@@ -1,11 +1,8 @@
 import "./App.css";
+import Header from "./components/Header";
 
 function App() {
-  return (
-    <p className="text-center font-bold bg-red-900 text-white ">
-      UniVerse is Cool !
-    </p>
-  );
+  return <Header />;
 }
 
 export default App;
