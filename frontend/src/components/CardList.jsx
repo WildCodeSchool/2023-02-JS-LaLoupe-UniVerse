@@ -5,8 +5,8 @@ const albumData = albumAPI[0].albums.items;
 
 export default function CardList() {
   return (
-    <div className="md:ml-[236px] my-10">
-      <h1>Nouveautés</h1>
+    <div className="md:ml-[236px] my-10 md:mr-3 mx-3">
+      <h1 className="mb-4 text sm:text-xl md:text-2xl">Nouveautés</h1>
       <div className="flex gap-3 overflow-x-auto">
         {albumData.map((album) => (
           <CardAlbumTitre

@@ -14,6 +14,9 @@ function App() {
       <Header />
       <SearchBar />
       <CardList />
+      <CardList />
+      <CardList />
+      <CardList />
       <CardListArtiste />
     </>
   );
