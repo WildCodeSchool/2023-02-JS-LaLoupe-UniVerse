@@ -2,7 +2,7 @@ import artisteApi from "../data/artisteApi";
 
 export default function CardArtiste() {
   return (
-    <figure className="w-28 h-36 py-3">
+    <figure className="w-28 h-36 py-3 md:ml-[223px] ">
       <img
         className=" m-auto rounded-full w-20"
         src={artisteApi[1].images[2].url}

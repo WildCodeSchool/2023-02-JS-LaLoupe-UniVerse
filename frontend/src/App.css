@@ -15,3 +15,11 @@ body {
 body {
   background-color: black;
 }
+
+::-webkit-scrollbar {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  display: none;
+}
