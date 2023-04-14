@@ -3,8 +3,8 @@ import NavBarPc from "./components/NavBarPC";
 import SearchBar from "./components/SearchBar";
 import "./App.css";
 import Header from "./components/Header";
-import CardArtiste from "./components/CardArtiste";
 import CardList from "./components/CardList";
+import CardListArtiste from "./components/CardListArtiste";
 
 function App() {
   return (
@@ -14,10 +14,10 @@ function App() {
       <Header />
       <SearchBar />
       <CardList />
-      <CardArtiste />
       <CardList />
       <CardList />
       <CardList />
+      <CardListArtiste />
     </>
   );
 }
