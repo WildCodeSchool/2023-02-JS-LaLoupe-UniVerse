@@ -1,7 +1,7 @@
 const NavBar = () => {
   return (
     <div className=" bottom-0 w-screen shadow-2xl md:hidden fixed">
-      <nav className="bg-zinc-900/50 p-5 flex align-item justify-around">
+      <nav className="bg-zinc-900/90 p-5 flex align-item justify-around">
         <img
           src="../src/assets/headphone_2_line.svg"
           alt="headphones logo"

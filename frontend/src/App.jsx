@@ -15,6 +15,9 @@ function App() {
       <SearchBar />
       <CardList />
       <CardArtiste />
+      <CardList />
+      <CardList />
+      <CardList />
     </>
   );
 }
