@@ -1,6 +1,6 @@
 export default function SearchBar() {
   return (
-    <section className="justify-center hidden">
+    <section className="justify-center">
       <input
         className="w-9/12 sm:w-6/12 h-7 rounded-xl px-2 shadow-md my-5 shadow-gray-600"
         type="text"
