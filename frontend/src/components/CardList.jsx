@@ -1,14 +1,12 @@
-import albumAPI from "../data/albumAPI";
+import PropTypes from "prop-types";
 import CardAlbumTitre from "./CardAlbumTitre";
 
-const albumData = albumAPI[0].albums.items;
-
-export default function CardList() {
+export default function CardList({ dataAlbums }) {
   return (
     <div className="md:ml-[236px] my-10 md:mr-3 mx-3">
       <h1 className="mb-4 text sm:text-xl md:text-2xl">Nouveautés</h1>
       <div className="flex gap-3 overflow-x-auto">
-        {albumData.map((album) => (
+        {dataAlbums.map((album) => (
           <CardAlbumTitre
             key={album.id}
             imgSrc={album.images[1].url}
@@ -21,3 +19,7 @@ export default function CardList() {
     </div>
   );
 }
+
+CardList.propTypes = {
+  dataAlbums: PropTypes.arrayOf.isRequired,
+};
