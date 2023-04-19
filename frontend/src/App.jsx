@@ -5,6 +5,7 @@ import "./App.css";
 import Header from "./components/Header";
 import CardAlbumTitre from "./components/CardAlbumTitre";
 import CardArtiste from "./components/CardArtiste";
+import CardGenre from "./components/CardGenre";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <div className="flex overflow-scroll">
         <CardArtiste />
       </div>
+      <CardGenre />
     </div>
   );
 }
