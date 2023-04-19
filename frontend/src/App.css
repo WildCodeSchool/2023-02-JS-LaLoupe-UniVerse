@@ -9,7 +9,7 @@ body {
 }
 @font-face {
   font-family: "Revalia";
-  src: url("../src/assets/Revalia/OFL.ttf");
+  src: url("../src/assets/Revalia/Revalia-Regular.ttf");
 }
 
 body {
@@ -26,19 +26,32 @@ body {
 }
 
 .universe {
+  z-index: 3;
+  font-family: "Revalia";
   position: absolute;
   display: flex;
   top: 0;
   right: 0;
-  margin: 0 22px 0 0;
-  font-size: 7em;
+  margin: 0 15px 0 0;
+  font-size: 28px;
   font-weight: 800;
-  color: white;
   overflow: hidden;
   background: #912a87;
   background: linear-gradient(to right, #912a87 9%, #b51fab 21%, #e32a74 69%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.degrade {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  color: transparent;
+  background: linear-gradient(to right, black 6%, black 21%, black 69%);
+  opacity: 0.3;
+  width: 40rem;
+  height: 25%;
 }
 
 @media screen and (min-width: 768px) {
@@ -46,5 +59,24 @@ body {
     display: block;
     background-color: rgba(94, 92, 92, 0.81);
     border-radius: 10px;
+  }
+  .universe {
+    font-size: 5rem;
+  }
+
+  .degrade {
+    width: 16rem;
+    height: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .universe {
+    font-size: 7em;
+  }
+
+  .degrade {
+    height: 45%;
+    width: 25rem;
   }
 }
