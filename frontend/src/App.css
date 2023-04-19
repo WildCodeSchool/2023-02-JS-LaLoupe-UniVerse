@@ -25,6 +25,22 @@ body {
   display: none;
 }
 
+.universe {
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  margin: 0 22px 0 0;
+  font-size: 7em;
+  font-weight: 800;
+  color: white;
+  overflow: hidden;
+  background: #912a87;
+  background: linear-gradient(to right, #912a87 9%, #b51fab 21%, #e32a74 69%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @media screen and (min-width: 768px) {
   ::-webkit-scrollbar-thumb:horizontal {
     display: block;
