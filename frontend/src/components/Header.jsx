@@ -6,12 +6,6 @@ export default function Header() {
         src="../src/assets/image.png"
         alt="wave"
       />
-      {/* <video
-        src="../src/assets/equalizer.mp4"
-        className=" relative"
-        muted=""
-        autoplay=""
-      ></video> */}
 
       <p className="font-revalia text-2xl sm:text-5xl md:text-8xl  text-white absolute right-2 top-0 sm:top-5">
         <span className="text-purple-600 ">u</span>ni
