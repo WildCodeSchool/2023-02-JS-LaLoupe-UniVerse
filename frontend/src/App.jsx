@@ -4,11 +4,13 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 import NavBar from "./components/NavBar";
 import NavBarPc from "./components/NavBarPC";
-
 import "./App.css";
 import Header from "./components/Header";
-
 import authParameters from "./data/codesAccesAPI";
+import SearchAll from "./pages/SearchAll";
+import SearchArtist from "./pages/SearchArtist";
+import SearchAlbum from "./pages/SearchAlbum";
+import SearchTitle from "./pages/SearchTitle";
 
 function App() {
   const [accessToken, setAccessToken] = useState("");
@@ -54,8 +56,13 @@ function App() {
       <NavBarPc />
       <Header />
       <Routes>
-        <Route path="/" element={<Home albumsArray={albums} />} />
-        <Route path="/search" element={<Search />} />
+        <Route index element={<Home albumsArray={albums} />} />
+        <Route path="search" element={<Search token={accessToken} />}>
+          <Route index element={<SearchAll />} />
+          <Route path="artist" element={<SearchArtist />} />
+          <Route path="album" element={<SearchAlbum />} />
+          <Route path="title" element={<SearchTitle />} />
+        </Route>
       </Routes>
     </>
   );
