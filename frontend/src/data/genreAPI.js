@@ -49,15 +49,11 @@ const genreAPI = [
   },
   {
     name: "K-pop",
-    image: "src/assets/ImgMusic/k-pop-music.jpg",
+    image: "src/assets/ImgMusic/kpop-music2.jpg",
   },
   {
     name: "Rock-n-roll",
-    image: "/src/assets/ImgMusic/rock-n-roll-music.jpg",
-  },
-  {
-    name: "All",
-    image: "/src/assets/ImgMusic/généric-music.jpg",
+    image: "/src/assets/ImgMusic/rocknroll2.jpg",
   },
 ];
 
