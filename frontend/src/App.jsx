@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Search from "./pages/Search";
 import NavBar from "./components/NavBar";
 import NavBarPc from "./components/NavBarPC";
-import SearchBar from "./components/SearchBar";
+
 import "./App.css";
 import Header from "./components/Header";
-import CardGenre from "./components/CardGenre";
-import CardList from "./components/CardList";
-import CardListArtiste from "./components/CardListArtiste";
+
 import authParameters from "./data/codesAccesAPI";
 
 function App() {
@@ -52,13 +53,10 @@ function App() {
       <NavBar />
       <NavBarPc />
       <Header />
-      <SearchBar />
-      {albums.length > 0 && <CardList dataAlbums={albums} />}
-      {albums.length > 0 && <CardList dataAlbums={albums} />}
-      <CardListArtiste />
-      <CardGenre />
-      {albums.length > 0 && <CardList dataAlbums={albums} />}
-      {albums.length > 0 && <CardList dataAlbums={albums} />}
+      <Routes>
+        <Route path="/" element={<Home albumsArray={albums} />} />
+        <Route path="/search" element={<Search />} />
+      </Routes>
     </>
   );
 }
