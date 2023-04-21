@@ -10,7 +10,7 @@ const NavBar = () => {
               className={
                 isActive
                   ? "text-white"
-                  : "hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+                  : "hover:bg-gradient-to-r from-pink-500/80 via-purple-500 to-pink-500"
               }
             >
               <p className="flex flex-row-reverse text-xl justify-end px-10 py-3">
@@ -30,7 +30,7 @@ const NavBar = () => {
               className={
                 isActive
                   ? "text-white"
-                  : "hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 "
+                  : "hover:bg-gradient-to-r from-pink-500/80 via-purple-500 to-pink-500 "
               }
             >
               <p className="flex flex-row-reverse text-xl justify-end px-10 py-3">
@@ -50,7 +50,7 @@ const NavBar = () => {
               className={
                 isActive
                   ? "text-white"
-                  : "hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 "
+                  : "hover:bg-gradient-to-r from-pink-500/80 via-purple-500 to-pink-500 "
               }
             >
               <p className="flex flex-row-reverse text-xl justify-end px-10 py-3">

@@ -6,6 +6,7 @@ export default function CardArtiste({ imgSrc, artisteName }) {
       <img
         className="rounded-full w-24 h-24  md:w-48 md:h-52 
          m-auto sm:py-2 md:rounded-full sm:w-36 sm:h-36"
+        id="CardAlbum"
         src={imgSrc}
         alt={artisteName}
       />

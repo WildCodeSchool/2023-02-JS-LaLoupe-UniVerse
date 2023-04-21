@@ -52,7 +52,6 @@ function App() {
 
   return (
     <>
-      <NavBar />
       <NavBarPc />
       <Header />
       <Routes>
@@ -64,6 +63,7 @@ function App() {
           <Route path="title" element={<SearchTitle />} />
         </Route>
       </Routes>
+      <NavBar />
     </>
   );
 }
