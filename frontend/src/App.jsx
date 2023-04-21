@@ -50,13 +50,13 @@ function App() {
 
   return (
     <>
-      <NavBar />
       <NavBarPc />
       <Header />
       <Routes>
         <Route path="/" element={<Home albumsArray={albums} />} />
         <Route path="/search" element={<Search />} />
       </Routes>
+      <NavBar />
     </>
   );
 }

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <div className=" fixed bottom-0 w-screen shadow-2xl md:hidden ">
+    <div className="fixed bottom-0 w-screen shadow-2xl md:hidden ">
       <nav className="bg-zinc-900/90 p-3 flex align-item justify-around">
         <NavLink to="/">
           <img
