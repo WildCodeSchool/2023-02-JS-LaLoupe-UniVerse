@@ -17,5 +17,6 @@ export default function Home({ albumsArray }) {
 }
 
 Home.propTypes = {
-  albumsArray: PropTypes.arrayOf.isRequired,
+  albumsArray: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
+    .isRequired,
 };
