@@ -64,20 +64,20 @@ const artisteApi = [
   },
   {
     id: "6H0LnhDF6W7g2H234i6z3Q",
-    name: "Tragedy",
+    name: "Tragédie",
     images: [
       {
-        url: "https://i.scdn.co/image/ab67616d0000b273f77369fdb5acceea90beee1a",
+        url: "https://i.scdn.co/image/ab67616d0000b2738d2fd8a9ebbdb3e15ff6469d",
         height: 640,
         width: 640,
       },
       {
-        url: "https://i.scdn.co/image/ab67616d00001e02f77369fdb5acceea90beee1a",
+        url: "https://i.scdn.co/image/ab67616d00001e028d2fd8a9ebbdb3e15ff6469d",
         height: 300,
         width: 300,
       },
       {
-        url: "https://i.scdn.co/image/ab67616d00004851f77369fdb5acceea90beee1a",
+        url: "https://i.scdn.co/image/ab67616d000048518d2fd8a9ebbdb3e15ff6469d",
         height: 64,
         width: 64,
       },
@@ -85,20 +85,20 @@ const artisteApi = [
   },
   {
     id: "4HxvnrF7cU4fzdlWTKQmio",
-    name: "Billy Crawford",
+    name: "Jeanne Mas",
     images: [
       {
-        url: "https://i.scdn.co/image/ab67616d0000b27399cf0f5937a5fdd0b7f4986b",
+        url: "https://i.scdn.co/image/ab67616d0000b273ce053b5d3475ecccd6af2854",
         height: 640,
         width: 640,
       },
       {
-        url: "https://i.scdn.co/image/ab67616d00001e0299cf0f5937a5fdd0b7f4986b",
+        url: "https://i.scdn.co/image/ab67616d00001e02ce053b5d3475ecccd6af2854",
         height: 300,
         width: 300,
       },
       {
-        url: "https://i.scdn.co/image/ab67616d0000485199cf0f5937a5fdd0b7f4986b",
+        url: "https://i.scdn.co/image/ab67616d00004851ce053b5d3475ecccd6af2854",
         height: 64,
         width: 64,
       },
@@ -109,19 +109,9 @@ const artisteApi = [
     name: "Aqua",
     images: [
       {
-        url: "https://i.scdn.co/image/ab67616d0000b273aaed26689894f910a5690602",
+        url: "https://www.melody.tv/wp-content/uploads/2021/111836-aqua_se_reforme_pour_les_20_ans_de_barbie_girl.jpg",
         height: 640,
         width: 640,
-      },
-      {
-        url: "https://i.scdn.co/image/ab67616d00001e02aaed26689894f910a5690602",
-        height: 300,
-        width: 300,
-      },
-      {
-        url: "https://i.scdn.co/image/ab67616d00004851aaed26689894f910a5690602",
-        height: 64,
-        width: 64,
       },
     ],
   },
@@ -130,17 +120,17 @@ const artisteApi = [
     name: "Spice Girls",
     images: [
       {
-        url: "https://i.scdn.co/image/ab6761610000e5eb1fba42e683810b35bc96c650",
+        url: "https://i.scdn.co/image/ab6761610000e5ebcf4a1dced6258416eb219e36",
         height: 640,
         width: 640,
       },
       {
-        url: "https://i.scdn.co/image/ab676161000051741fba42e683810b35bc96c650",
+        url: "https://i.scdn.co/image/ab67616100005174cf4a1dced6258416eb219e36",
         height: 320,
         width: 320,
       },
       {
-        url: "https://i.scdn.co/image/ab6761610000f1781fba42e683810b35bc96c650",
+        url: "https://i.scdn.co/image/ab6761610000f178cf4a1dced6258416eb219e36",
         height: 160,
         width: 160,
       },
@@ -190,22 +180,12 @@ const artisteApi = [
   },
   {
     id: "4siBlVknVhh8jtVy9jHsDG",
-    name: "Julie Pietri",
+    name: "Xa Vier",
     images: [
       {
-        url: "https://i.scdn.co/image/03eec1fd7918a1fd6873455982172be98656c218",
-        height: 640,
-        width: 640,
-      },
-      {
-        url: "https://i.scdn.co/image/915ea729459cd51dbb10962420a5858640aa1600",
-        height: 200,
-        width: 200,
-      },
-      {
-        url: "https://i.scdn.co/image/adf9b1f8b315ffbe358279bb70b890a45a267c47",
-        height: 64,
-        width: 64,
+        url: "https://media.licdn.com/dms/image/C4D03AQGzococLgf1DA/profile-displayphoto-shrink_800_800/0/1551543099428?e=1687392000&v=beta&t=-ttzA_ZwF4TqyDB-wy64Nl2M4u7mx4bVddMJd3Pcg-c",
+        height: 1000,
+        width: 1000,
       },
     ],
   },
