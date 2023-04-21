@@ -6,40 +6,59 @@ const NavBar = () => {
       <nav className="bg-zinc-900/90 p-2 flex align-item justify-around">
         <NavLink
           to="/"
-          className=" focus:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  transition duration-300 ease-in-out rounded-md"
+          // className=" focus:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  transition duration-300 ease-in-out rounded-md"
+          end
         >
-          <div className="hover:bg-purple-600 active:bg-purple-500 rounded-md p-2">
-            <img
-              src="../src/assets/headphone_2_line.svg"
-              alt="headphones logo"
-              className="w-10 h-10 opacity-70 "
-            />
-          </div>
+          {({ isActive }) => (
+            <div
+              className={
+                isActive
+                  ? "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-md"
+                  : ""
+              }
+            >
+              <img
+                src="../src/assets/headphone_2_line.svg"
+                alt="headphones logo"
+                className="w-10 h-10 opacity-70 "
+              />
+            </div>
+          )}
         </NavLink>
 
-        <NavLink
-          to="/search"
-          className=" focus:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  transition duration-300 ease-in-out rounded-md"
-        >
-          <div className="hover:bg-purple-600 active:bg-purple-500 rounded-md p-2">
-            <img
-              src="../src/assets/search_2_line.svg"
-              alt="Loupe logo"
-              className="w-10 h-10 opacity-70"
-            />
-          </div>
+        <NavLink to="/search">
+          {({ isActive }) => (
+            <div
+              className={
+                isActive
+                  ? "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-md "
+                  : ""
+              }
+            >
+              <img
+                src="../src/assets/search_2_line.svg"
+                alt="Loupe logo"
+                className="w-10 h-10 opacity-70"
+              />
+            </div>
+          )}
         </NavLink>
-        <NavLink
-          to="/search"
-          className=" focus:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  transition duration-300 ease-in-out rounded-md"
-        >
-          <div className="hover:bg-purple-600 active:bg-purple-500 rounded-md  p-2">
-            <img
-              src="../src/assets/radio_line.svg"
-              alt="Radio logo"
-              className="w-10 h-10 opacity-70"
-            />
-          </div>
+        <NavLink to="/searchrtbgd">
+          {({ isActive }) => (
+            <div
+              className={
+                isActive
+                  ? "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-md "
+                  : ""
+              }
+            >
+              <img
+                src="../src/assets/radio_line.svg"
+                alt="Radio logo"
+                className="w-10 h-10 opacity-70"
+              />
+            </div>
+          )}
         </NavLink>
       </nav>
     </div>
