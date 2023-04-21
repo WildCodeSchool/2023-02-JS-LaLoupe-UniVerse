@@ -15,7 +15,9 @@ export default function CardListArtiste() {
   }
   return (
     <div className="flex-col relative md:ml-[236px] mt-2 mb-1 md:pr-5 md:pl-5 md:mr-3 mx-3 ">
-      <h1 className=" mb-4 text sm:text-xl md:text-2xl">Artistes</h1>
+      <h1 className=" mb-4 text sm:text-xl md:text-2xl">
+        Notre sélection d'artistes
+      </h1>
       <div>
         <div
           ref={sliderRef}

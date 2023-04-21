@@ -7,10 +7,8 @@ export default function Home({ albumsArray }) {
   return (
     <main>
       {albumsArray.length > 0 && <CardList dataAlbums={albumsArray} />}
-      {albumsArray.length > 0 && <CardList dataAlbums={albumsArray} />}
       <CardListArtiste />
       <CardListGenre />
-      {albumsArray.length > 0 && <CardList dataAlbums={albumsArray} />}
       {albumsArray.length > 0 && <CardList dataAlbums={albumsArray} />}
     </main>
   );

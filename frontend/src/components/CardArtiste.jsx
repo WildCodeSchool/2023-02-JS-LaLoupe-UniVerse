@@ -11,7 +11,7 @@ export default function CardArtiste({ imgSrc, artisteName }) {
         alt={artisteName}
       />
       <figcaption>
-        <h2 className="font-bold text-xs/4 mt-4 h-8  text-center text-white/70 sm:text-base md:text-xl/3 truncate">
+        <h2 className="font-bold text-xs/4 mt-2 h-8  text-center text-white/70 sm:text-base md:text-xl/3 truncate">
           {artisteName}
         </h2>
       </figcaption>
