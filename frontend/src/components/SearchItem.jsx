@@ -10,7 +10,7 @@ export default function SearchItem({ value, path }) {
             type="button"
             className={
               isActive
-                ? " w-24 h-10 rounded-lg bg-neutral-900 hover:bg-pink-600/30"
+                ? " w-24 h-10 rounded-lg bg-neutral-900 sm:hover:bg-pink-600/30"
                 : " w-24 h-10 rounded-lg bg-pink-600/30 hover:bg-neutral-900 text-white/50"
             }
           >

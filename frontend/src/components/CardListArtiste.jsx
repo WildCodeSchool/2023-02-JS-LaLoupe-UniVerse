@@ -1,8 +1,8 @@
+import PropTypes from "prop-types";
 import { useRef } from "react";
-import artisteApi from "../data/artisteApi";
 import CardArtiste from "./CardArtiste";
 
-export default function CardListArtiste() {
+export default function CardListArtiste({ dataArtist, title }) {
   const sliderRef = useRef();
   function scrollLeft() {
     const width = sliderRef.current.childNodes[0].offsetWidth;
@@ -14,20 +14,20 @@ export default function CardListArtiste() {
     sliderRef.current.scrollBy(width * 4 + 12, 0);
   }
   return (
-    <div className="flex-col relative md:ml-[236px] mt-2 mb-1 md:pr-5 md:pl-5 md:mr-3 mx-3 ">
-      <h1 className=" mb-4 text sm:text-xl md:text-2xl">
-        Notre sélection d'artistes
-      </h1>
+    <div className="mx-3 flex-col relative md:ml-[236px] mt-2 mb-1 md:pr-5 md:pl-5  ">
+      <h1 className=" mb-4 text sm:text-xl md:text-2xl">{title}</h1>
       <div>
         <div
           ref={sliderRef}
           id="slider"
           className="flex gap-3 overflow-x-auto "
         >
-          {artisteApi.map((artiste) => (
+          {dataArtist.map((artiste) => (
             <CardArtiste
               key={artiste.id}
-              imgSrc={artiste.images[0].url}
+              imgSrc={
+                artiste.images.length === 0 ? null : artiste.images[0].url
+              }
               artisteName={artiste.name}
             />
           ))}
@@ -50,3 +50,9 @@ export default function CardListArtiste() {
     </div>
   );
 }
+
+CardListArtiste.propTypes = {
+  dataArtist: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
+    .isRequired,
+  title: PropTypes.string.isRequired,
+};
