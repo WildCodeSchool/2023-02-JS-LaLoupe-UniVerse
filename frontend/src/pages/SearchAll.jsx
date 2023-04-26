@@ -6,7 +6,7 @@ import CardSearchTitle from "../components/CardSearchTitle";
 export default function SearchAll() {
   const [searchResultArtist, searchResultTracks, searchResultAlbum] =
     useOutletContext();
-  searchResultTracks.splice(6, 14);
+  const searchTracks = searchResultTracks.slice(0, 6);
   return (
     <div>
       <section className="sm:flex sm:justify-center md:ml-[236px] mb-6 md:pl-5">
@@ -34,7 +34,7 @@ export default function SearchAll() {
           )}
           <div className="sm:grid sm:grid-cols-2 mr-3 sm:gap-2 flex justify-center flex-wrap md:pr-5 md:pl-5">
             {searchResultTracks.length > 0 &&
-              searchResultTracks.map((track) => (
+              searchTracks.map((track) => (
                 <CardSearchTitle
                   key={`search${track.id}`}
                   imgSrc={
@@ -45,6 +45,7 @@ export default function SearchAll() {
                   albumName={track.name}
                   artist={track.artists[0].name}
                   release={track.album.release_date.slice(0, 4)}
+                  duration={(track.duration_ms / 60000).toFixed(2)}
                 />
               ))}
           </div>
