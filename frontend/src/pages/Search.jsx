@@ -43,6 +43,7 @@ export default function Search({ token }) {
       <Outlet
         context={[searchResultArtist, searchResultTracks, searchResultAlbum]}
       />
+      <div className=" mb-16 sm:hidden" />
     </>
   );
 }
