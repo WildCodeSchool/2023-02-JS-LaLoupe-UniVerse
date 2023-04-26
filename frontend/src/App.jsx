@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Header from "./components/Header";
 import Search from "./pages/Search";
 import NavBar from "./components/NavBar";
 import NavBarPc from "./components/NavBarPC";
 import "./App.css";
-import Header from "./components/Header";
 import authParameters from "./data/codesAccesAPI";
 import SearchAll from "./pages/SearchAll";
 import SearchArtist from "./pages/SearchArtist";
 import SearchAlbum from "./pages/SearchAlbum";
 import SearchTitle from "./pages/SearchTitle";
+import AlbumTitreDetails from "./pages/AlbumTitreDetails";
 
 function App() {
   const [accessToken, setAccessToken] = useState("");
@@ -56,6 +57,11 @@ function App() {
       <Header />
       <Routes>
         <Route index element={<Home albumsArray={albums} />} />
+        <Route
+          path="search/album/:id"
+          element={<AlbumTitreDetails token={accessToken} />}
+        />
+
         <Route path="search" element={<Search token={accessToken} />}>
           <Route index element={<SearchAll />} />
           <Route path="artist" element={<SearchArtist />} />

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import loupe from "../assets/loupe.png";
 
 export default function SearchBar({ query, setQuery }) {
   return (
@@ -10,11 +11,7 @@ export default function SearchBar({ query, setQuery }) {
         onChange={(e) => setQuery(e.target.value)}
         value={query}
       />
-      <img
-        className="w-5 h-5 relative right-7 top-6"
-        src="../src/assets/loupe.png"
-        alt="loupe"
-      />
+      <img className="w-5 h-5 relative right-7 top-6" src={loupe} alt="loupe" />
     </section>
   );
 }
