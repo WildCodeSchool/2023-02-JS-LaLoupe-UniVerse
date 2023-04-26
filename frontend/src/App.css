@@ -112,7 +112,10 @@ body {
     font-size: 5rem;
   }
 
-  .opaque1 {
+  <<<<<<< HEAD .degrade {
+    height: 160px;
+  }
+  =======>>>>>>>ff09d08146d4bf5ef15de47fe6ad1c3404b4366d .opaque1 {
     width: 150px;
     height: 160px;
   }
