@@ -57,12 +57,16 @@ function App() {
       <Header />
       <Routes>
         <Route index element={<Home albumsArray={albums} />} />
+        <Route
+          path="search/album/:id"
+          element={<AlbumTitreDetails token={accessToken} />}
+        />
+
         <Route path="search" element={<Search token={accessToken} />}>
           <Route index element={<SearchAll />} />
           <Route path="artist" element={<SearchArtist />} />
           <Route path="album" element={<SearchAlbum />} />
           <Route path="title" element={<SearchTitle />} />
-          <Route path="album/:id" element={<AlbumTitreDetails />} />
         </Route>
       </Routes>
       <NavBar />
