@@ -22,6 +22,7 @@ export default function SearchAll() {
               albumName={searchResultAlbum[0].name}
               artist={searchResultAlbum[0].artists[0].name}
               release={searchResultAlbum[0].release_date.slice(0, 4)}
+              id={searchResultAlbum[0].id}
               className="m-auto"
             />
           )}

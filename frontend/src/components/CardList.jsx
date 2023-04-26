@@ -30,6 +30,7 @@ export default function CardList({ dataAlbums }) {
               albumName={album.name}
               artist={album.artists[0].name}
               release={album.release_date.slice(0, 4)}
+              id={album.id}
             />
           ))}
         </div>

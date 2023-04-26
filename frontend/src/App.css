@@ -43,16 +43,18 @@ body {
 }
 
 .opaque1 {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   width: 50px;
+  height: 60px;
   color: transparent;
-  opacity: 0.2;
+  opacity: 0.3;
 }
 .opaque2 {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   width: 60px;
   color: transparent;
   opacity: 0.4;
+  height: 60px;
 }
 
 .arrow {
@@ -110,15 +112,16 @@ body {
     font-size: 5rem;
   }
 
-  .degrade {
-    height: 50%;
+  <<<<<<< HEAD .degrade {
+    height: 160px;
   }
-
-  .opaque1 {
+  =======>>>>>>>ff09d08146d4bf5ef15de47fe6ad1c3404b4366d .opaque1 {
     width: 150px;
+    height: 160px;
   }
   .opaque2 {
     width: 150px;
+    height: 160px;
   }
 }
 
@@ -127,12 +130,8 @@ body {
     font-size: 6em;
   }
 
-  .degrade {
-    height: 150px;
-  }
-
   .opaque1 {
-    width: 200px;
+    width: 180px;
   }
   .opaque2 {
     width: 250px;
