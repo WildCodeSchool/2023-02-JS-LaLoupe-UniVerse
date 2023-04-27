@@ -31,23 +31,54 @@ export default function AlbumDetails({ token }) {
   }
 
   return (
-    <figure className="bg-neutral-900 hover:bg-pink-600/30 duration-150 h-36 rounded-md flex-none m-0 py-1 pb-1 px-2 w-28 sm:h-56 sm:w-44 md:h-64 md:w-56">
-      <img
-        className="rounded-md md:w-48 m-auto sm:py-2 md:py-0 md:rounded-md sm:w-36"
-        src={albumTitreDetails.images[0].url}
-        alt={albumTitreDetails.name}
-      />
-      <figcaption className="text-center text-white/60 space-y-0.5">
-        <h2 className="font-bold text-xs/4 text-white/70 sm:text-base md:text-base truncate">
-          {albumTitreDetails.name}
-        </h2>
-        <h3 className="text-xs/3 truncate">{albumTitreDetails.id}</h3>
-        <p className="text-[8px] sm:text-xs">
-          {albumTitreDetails.release_date}
-        </p>
-      </figcaption>
-      <p>{}</p>
-    </figure>
+    <div>
+      <figure className=" flex-col   ">
+        <div className=" md:flex md:ml-80">
+          <div className="flex justify-center md:justify-start">
+            <img
+              className="w-48 md:w-80 "
+              src={albumTitreDetails.images[0].url}
+              alt={albumTitreDetails.name}
+            />
+          </div>
+          <figcaption className="flex-col ml-12 md:ml-10 md:flex-col ">
+            <h3 className="font-bold  mt-5 text-sm md:mb-6 md:text-xl ">
+              Album
+            </h3>
+
+            <h2 className="font-bold mt-2 text-xl mb-3 text-white/70 md:text-5xl md:mb-8">
+              {albumTitreDetails.name}
+            </h2>
+            <h3>{albumTitreDetails.id.name}</h3>
+            <div className="flex text-xl md:justify-start">
+              <p className="mr-8 md:text-2xl">
+                {albumTitreDetails.artists[0].name}
+              </p>
+              <p className=" mr-6 md:ml-8 md:text-2xl">
+                {new Date(albumTitreDetails.release_date).getFullYear()}
+              </p>
+              <p className="invisible md:visible md: md:ml-8 md:text-2xl">
+                {albumTitreDetails.total_tracks} Titres
+              </p>
+            </div>
+          </figcaption>
+        </div>
+
+        <div className="flex-col mt-4 ml-12 justify-center md:ml-80 md:mt-10 ">
+          {albumTitreDetails.tracks.items.map((item) => (
+            <div className="flex justify-between mr-12">
+              <p className=" mt-2 text-sm md:text-xl " key={item.id}>
+                {item.track_number} {item.name}{" "}
+              </p>
+              <p className=" text-sm">
+                {parseFloat(item.duration_ms / 60000).toFixed(2)} min
+              </p>
+            </div>
+          ))}
+        </div>
+      </figure>
+      <p className="ml-12 mt-8">Vous devriez aussi aimer</p>
+    </div>
   );
 }
 
