@@ -100,7 +100,7 @@ export default function TitreDetails({ token }) {
           </p>
         </figcaption>
       </figure>
-      <Link to={`/search/artiste/${artisteDetail.id}`}>
+      <Link to={`/search/artist/${artisteDetail.id}`}>
         <h2 className="text-center">Artiste</h2>
         <figure className="bg-neutral-900 hover:bg-pink-600/30 flex justify-between items-center duration-150 rounded-md py-1 px-2 h-32 w-10/12 m-auto">
           <img

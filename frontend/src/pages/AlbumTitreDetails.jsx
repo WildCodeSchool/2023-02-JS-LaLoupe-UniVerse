@@ -84,7 +84,7 @@ export default function AlbumTitreDetails({ token }) {
                 </p>
               </div>
             </figcaption>
-            <Link to={`/search/artiste/${artisteDetail.id}`}>
+            <Link to={`/search/artist/${artisteDetail.id}`}>
               <div className="flex items-center font-bold text-base mt-4 md:mt-9 text-white/70 md:text-xl md:ml-12 md:justify-start">
                 <img
                   className="rounded-full w-12 md:w-16 mr-4"
