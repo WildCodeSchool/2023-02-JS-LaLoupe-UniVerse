@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import headerImg from "../assets/image.png";
 
 export default function Header() {
@@ -12,12 +13,14 @@ export default function Header() {
         <p className="opaque1">0</p>
         <p className="opaque2">0</p>
       </div>
-      <p
-        id="universe"
-        className="text-2xl sm:text-5xl md:text-8xl  text-white absolute right-2 top-0 sm:top-5"
-      >
-        uni<span className="vuniverse">V</span>erse
-      </p>
+      <Link to="/">
+        <p
+          id="universe"
+          className="text-2xl sm:text-5xl md:text-8xl  text-white absolute right-2 top-0 sm:top-5"
+        >
+          uni<span className="vuniverse">V</span>erse
+        </p>
+      </Link>
     </header>
   );
 }
