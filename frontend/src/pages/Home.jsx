@@ -7,13 +7,17 @@ import artisteApi from "../data/artisteApi";
 export default function Home({ albumsArray }) {
   return (
     <main>
-      {albumsArray.length > 0 && <CardList dataAlbums={albumsArray} />}
+      {albumsArray.length > 0 && (
+        <CardList dataAlbums={albumsArray} title="Nouveautés" />
+      )}
       <CardListArtiste
         dataArtist={artisteApi}
         title="Notre sélection d'artistes"
       />
       <CardListGenre />
-      {albumsArray.length > 0 && <CardList dataAlbums={albumsArray} />}
+      {albumsArray.length > 0 && (
+        <CardList dataAlbums={albumsArray} title="Daily" />
+      )}
       <div className=" mb-16 sm:hidden" />
     </main>
   );

@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 // import CardListTitres from "./src/components/CardListTitres";
+import CardList from "../components/CardList";
 
 export default function ArtistDetail({ token }) {
   const [artist, setArtist] = useState();
   // const [tracks, setTracks] = useState();
-  // const [album, setAlbum] = useState();
+  const [album, setAlbum] = useState();
   const { id } = useParams();
 
   const getOneArtist = () => {
@@ -22,15 +23,6 @@ export default function ArtistDetail({ token }) {
       .then((artistData) => setArtist(artistData))
       .catch((err) => console.error(err));
   };
-
-  useEffect(() => {
-    if (token !== "") {
-      getOneArtist();
-    }
-  }, [id]);
-  if (!artist) {
-    return <p>Loading artiste</p>;
-  }
 
   // const getOneTracks = () => {
   //   const artistParameters = {
@@ -58,6 +50,40 @@ export default function ArtistDetail({ token }) {
   //   return <p>Loading tracks</p>;
   // }
 
+  const getOneAlbum = () => {
+    const artistParameters = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    fetch(
+      `https://api.spotify.com/v1/artists/${id}/albums?limit=20&market=FR`,
+      artistParameters
+    )
+      .then((response) => response.json())
+      .then((albumData) => setAlbum(albumData))
+      .catch((err) => console.error(err));
+  };
+  useEffect(() => {
+    if (token !== "") {
+      getOneArtist();
+    }
+  }, [id]);
+
+  useEffect(() => {
+    if (token !== "") {
+      getOneAlbum();
+    }
+  }, [id]);
+  if (!artist) {
+    return <p>Loading artiste</p>;
+  }
+  if (!album) {
+    return <p>Loading album</p>;
+  }
+
   return (
     <main>
       <figure className="">
@@ -76,7 +102,8 @@ export default function ArtistDetail({ token }) {
       <section>
         <h2 className="mt-6 ml-2 text-xl">Ses plus grands Hits</h2>
         {/* <CardListTitres /> */}
-        <h2 className="mt-6 ml-2 text-xl">Discographie</h2>
+
+        <CardList dataAlbums={album.items} title="Discographie" />
         <h2 className="mt-6 ml-2 text-xl">Vous devriez aussi aimer</h2>
       </section>
     </main>

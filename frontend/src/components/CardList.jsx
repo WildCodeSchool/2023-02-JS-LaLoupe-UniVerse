@@ -2,7 +2,7 @@ import { useRef } from "react";
 import PropTypes from "prop-types";
 import CardAlbumTitre from "./CardAlbumTitre";
 
-export default function CardList({ dataAlbums }) {
+export default function CardList({ dataAlbums, title }) {
   const sliderListRef = useRef();
 
   function scrollLeft() {
@@ -16,7 +16,7 @@ export default function CardList({ dataAlbums }) {
   }
   return (
     <div className=" relative md:ml-[236px] mt-2 md:pr-5 md:pl-5 md:mr-3 mx-3">
-      <h1 className="mb-4  text sm:text-xl md:text-2xl">Nouveautés</h1>
+      <h1 className="mb-4  text sm:text-xl md:text-2xl">{title}</h1>
       <div>
         <div
           ref={sliderListRef}
@@ -30,6 +30,7 @@ export default function CardList({ dataAlbums }) {
               albumName={album.name}
               artist={album.artists[0].name}
               release={album.release_date.slice(0, 4)}
+              id={album.id}
             />
           ))}
         </div>
@@ -54,4 +55,5 @@ export default function CardList({ dataAlbums }) {
 
 CardList.propTypes = {
   dataAlbums: PropTypes.arrayOf(PropTypes.string).isRequired,
+  title: PropTypes.string.isRequired,
 };
