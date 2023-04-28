@@ -7,11 +7,7 @@ const NavBar = () => {
   return (
     <div className=" fixed bottom-0 w-screen shadow-2xl md:hidden ">
       <nav className="bg-zinc-900/90 p-2 flex align-item justify-around">
-        <NavLink
-          to="/"
-          // className=" focus:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  transition duration-300 ease-in-out rounded-md"
-          end
-        >
+        <NavLink to="/" end>
           {({ isActive }) => (
             <div
               className={

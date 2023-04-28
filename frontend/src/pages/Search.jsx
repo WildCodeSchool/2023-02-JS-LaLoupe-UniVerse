@@ -41,7 +41,7 @@ export default function Search({ token }) {
       <SearchBar query={searchInput} setQuery={setSearchInput} />
       <SearchNavBar />
       <Outlet
-        context={[searchResultArtist, searchResultTracks, searchResultAlbum]}
+        context={{ searchResultArtist, searchResultTracks, searchResultAlbum }}
       />
       <div className=" mb-16 sm:hidden" />
     </>

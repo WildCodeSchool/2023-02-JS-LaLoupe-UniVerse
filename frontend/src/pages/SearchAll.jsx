@@ -4,7 +4,7 @@ import CardListArtiste from "../components/CardListArtiste";
 import CardSearchTitle from "../components/CardSearchTitle";
 
 export default function SearchAll() {
-  const [searchResultArtist, searchResultTracks, searchResultAlbum] =
+  const { searchResultArtist, searchResultTracks, searchResultAlbum } =
     useOutletContext();
   const searchTracks = searchResultTracks.slice(0, 6);
 

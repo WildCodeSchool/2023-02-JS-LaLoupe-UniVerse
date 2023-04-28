@@ -2,9 +2,7 @@ import { useOutletContext } from "react-router-dom";
 import CardTitre from "../components/CardTitre";
 
 export default function SearchTitle() {
-  // eslint-disable-next-line no-unused-vars
-  const [searchResultArtist, searchResultTracks, searchResultAlbum] =
-    useOutletContext();
+  const { searchResultTracks } = useOutletContext();
 
   return (
     <div className="flex justify-evenly flex-wrap md:ml-[236px] my-10 md:mr-3 mx-3 gap-3">
