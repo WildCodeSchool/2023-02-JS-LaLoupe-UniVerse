@@ -29,6 +29,7 @@ export default function CardListArtiste({ dataArtist, title }) {
                 artiste.images.length === 0 ? null : artiste.images[0].url
               }
               artisteName={artiste.name}
+              id={artiste.id}
             />
           ))}
         </div>
