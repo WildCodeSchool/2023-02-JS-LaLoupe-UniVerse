@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import headerImg from "../assets/image.png";
 
 export default function Header() {
   return (
     <header className=" bg-black h-14 sm:h-24 md:h-40  ">
       <img
         className="right-0 top-0.5 opacity-50 h-full 4 "
-        src="../src/assets/image.png"
+        src={headerImg}
         alt="wave"
       />
       <div className="degrade">
