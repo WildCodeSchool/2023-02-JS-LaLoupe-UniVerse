@@ -13,6 +13,7 @@ import SearchAlbum from "./pages/SearchAlbum";
 import SearchTitle from "./pages/SearchTitle";
 import ArtistDetail from "./pages/ArtistDetail";
 import AlbumTitreDetails from "./pages/AlbumTitreDetails";
+import TitreDetails from "./pages/TitreDetails";
 
 function App() {
   const [accessToken, setAccessToken] = useState("");
@@ -66,8 +67,13 @@ function App() {
           path="search/album/:id"
           element={<AlbumTitreDetails token={accessToken} />}
         />
+        <Route
+          path="search/title/:id"
+          element={<TitreDetails token={accessToken} />}
+        />
         <Route path="search" element={<Search token={accessToken} />}>
           <Route index element={<SearchAll />} />
+
           <Route path="artist" element={<SearchArtist />} />
           <Route path="album" element={<SearchAlbum />} />
           <Route path="title" element={<SearchTitle />} />

@@ -1,4 +1,7 @@
 import { NavLink } from "react-router-dom";
+import headphone from "../assets/headphone_2_line.svg";
+import search from "../assets/search_2_line.svg";
+import radio from "../assets/radio_line.svg";
 
 const NavBar = () => {
   return (
@@ -18,7 +21,7 @@ const NavBar = () => {
               }
             >
               <img
-                src="../src/assets/headphone_2_line.svg"
+                src={headphone}
                 alt="headphones logo"
                 className="w-10 h-10 opacity-70 "
               />
@@ -36,7 +39,7 @@ const NavBar = () => {
               }
             >
               <img
-                src="../src/assets/search_2_line.svg"
+                src={search}
                 alt="Loupe logo"
                 className="w-10 h-10 opacity-70"
               />
@@ -53,7 +56,7 @@ const NavBar = () => {
               }
             >
               <img
-                src="../src/assets/radio_line.svg"
+                src={radio}
                 alt="Radio logo"
                 className="w-10 h-10 opacity-70"
               />

@@ -6,7 +6,6 @@ body {
   background-color: black;
   color: white;
   margin: 0;
-  line-height: 5%;
 }
 @font-face {
   font-family: "Revalia";
@@ -112,10 +111,10 @@ body {
     font-size: 5rem;
   }
 
-  <<<<<<< HEAD .degrade {
+  .degrade {
     height: 160px;
   }
-  =======>>>>>>>ff09d08146d4bf5ef15de47fe6ad1c3404b4366d .opaque1 {
+  .opaque1 {
     width: 150px;
     height: 160px;
   }
