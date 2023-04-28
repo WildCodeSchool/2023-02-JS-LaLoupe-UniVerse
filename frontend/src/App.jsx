@@ -61,7 +61,6 @@ function App() {
           path="search/album/:id"
           element={<AlbumTitreDetails token={accessToken} />}
         />
-
         <Route path="search" element={<Search token={accessToken} />}>
           <Route index element={<SearchAll />} />
           <Route path="artist" element={<SearchArtist />} />
