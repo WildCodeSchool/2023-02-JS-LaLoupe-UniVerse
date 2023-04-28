@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import CardGenre from "./CardGenre";
 import genreAPI from "../data/genreAPI";
+import arrow from "../assets/FlecheIcons/chevron.png";
 
 export default function CardListGenre() {
   const sliderGenreRef = useRef();
@@ -28,18 +29,10 @@ export default function CardListGenre() {
         ))}
       </div>
       <button className="precedentGenre" onClick={scrollLeft} type="button">
-        <img
-          className="arrow"
-          src="./src/assets/FlecheIcons/chevron.png "
-          alt="fleche-gauche"
-        />
+        <img className="arrow" src={arrow} alt="fleche-gauche" />
       </button>
       <button className="suivantGenre" onClick={scrollRight} type="button">
-        <img
-          className="arrow"
-          src="./src/assets/FlecheIcons/chevron.png "
-          alt="fleche-droite"
-        />
+        <img className="arrow" src={arrow} alt="fleche-droite" />
       </button>
     </div>
   );
