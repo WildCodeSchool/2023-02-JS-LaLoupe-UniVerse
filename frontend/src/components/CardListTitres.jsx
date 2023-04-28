@@ -1,10 +1,17 @@
 import { useRef } from "react";
 import PropTypes from "prop-types";
-import CardAlbumTitre from "./CardAlbumTitre";
+import CardTitre from "./CardTitre";
 
 export default function CardListTitres({ dataAlbums, title }) {
   const sliderListRef = useRef();
 
+  const convertNumberMsEnMin = (number) => {
+    const min = Math.floor(number / 60000);
+    const reste = number % 60000;
+    return `${min}:${Math.floor(reste / 1000)
+      .toString()
+      .padStart(2, "0")}`;
+  };
   function scrollLeft() {
     const width = sliderListRef.current.childNodes[0].offsetWidth;
     sliderListRef.current.scrollBy(-(width * 4 + 12), 0);
@@ -24,12 +31,14 @@ export default function CardListTitres({ dataAlbums, title }) {
           className="flex gap-3 overflow-x-auto"
         >
           {dataAlbums.map((album) => (
-            <CardAlbumTitre
-              key={album.tracks.items[0].id}
-              imgSrc={album.tracks.items[0].album.images[0].url}
-              albumName={album.tracks.items[0].name}
-              artist={album.tracks.items[0].artists[0].name}
-              release={album.tracks.items[0].album.release_date.slice(0, 4)}
+            <CardTitre
+              key={album.id}
+              imgSrc={album.album.images[0].url}
+              titreName={album.name}
+              artist={album.artists[0].name}
+              release={album.album.release_date.slice(0, 4)}
+              id={album.id}
+              duration={convertNumberMsEnMin(album.duration_ms)}
             />
           ))}
         </div>
@@ -53,6 +62,7 @@ export default function CardListTitres({ dataAlbums, title }) {
 }
 
 CardListTitres.propTypes = {
-  dataAlbums: PropTypes.arrayOf(PropTypes.string).isRequired,
+  dataAlbums: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
+    .isRequired,
   title: PropTypes.string.isRequired,
 };

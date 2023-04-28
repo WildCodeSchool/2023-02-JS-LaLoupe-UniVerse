@@ -54,5 +54,6 @@ export default function CardList({ dataAlbums }) {
 }
 
 CardList.propTypes = {
-  dataAlbums: PropTypes.arrayOf(PropTypes.string).isRequired,
+  dataAlbums: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
+    .isRequired,
 };

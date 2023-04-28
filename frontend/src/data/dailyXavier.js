@@ -84,18 +84,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:5D5fiDX8MhK3lfHJmZZmpt",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=one+ok+rock+save+yourself&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=one+ok+rock+I+was+king&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -177,18 +165,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:5eNlrdrZSTnfJjXpPg1ykV",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=one+ok+rock+I+was+king&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=one+ok+rock+re%3Amake&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -270,18 +246,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:6IghCx6jRj5VHEmXKQH2pR",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=one+ok+rock+re%3Amake&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 755,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=stevie+nicks+edge+of+seventeen&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -363,18 +327,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:7L3b6iaVhDVjfo52Hbvh9Z",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=stevie+nicks+edge+of+seventeen&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=ACDC+shot+down&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -456,18 +408,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:6pivm7pNF4GyBkHNGseHCS",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=ACDC+shot+down&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=welcome+to+the+jungle+gun%27s&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -549,18 +489,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:0G21yYKMZoHa30cYVi1iA8",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=welcome+to+the+jungle+gun%27s&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=linkin+park+castle+of&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -642,18 +570,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:1r1fPuhj9H4VdXr7OK6FL5",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=linkin+park+castle+of&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=linkin+park+in+the+end&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -735,18 +651,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:60a0Rd6pjrkxjPbaKzXjfq",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=linkin+park+in+the+end&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=linkin+park+one+more+light&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -828,18 +732,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:3xXBsjrbG1xQIm1xv1cKOt",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=linkin+park+one+more+light&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=linkin+park+irid&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -921,18 +813,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:69ZEgPX0hxWXJIqkTlYz41",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=linkin+park+irid&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=scorpion+hurri&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -1014,18 +894,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:4Vzt8zyLD9Q64QiPBeAlJu",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=scorpion+hurri&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=queen+bohem&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -1107,18 +975,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:4u7EnebtmKWzUH433cf5Qv",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=queen+bohem&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=daft+punk+contact&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -1200,18 +1056,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:2KHRENHQzTIQ001nlP9Gdc",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=daft+punk+contact&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=daft+punk+get+lucky&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "single",
@@ -1315,18 +1159,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:2Foc5Q5nqNiosCNqttzHof",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=daft+punk+get+lucky&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=daft+punk+Giorgio+By+Moroder&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -1408,18 +1240,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:0oks4FnzhNp5QPTZtoet7c",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=daft+punk+Giorgio+By+Moroder&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=daft+punk+the+grid&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -1501,18 +1321,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:2tRWMCijEFsGPDxBgHxHre",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=daft+punk+the+grid&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=pentatonix+daft&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -1594,18 +1402,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:6ukvsBzq4d1vBsAUmz7ZVt",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=pentatonix+daft&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=pentatonix+imagine&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -1687,18 +1483,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:1UaTmLT3nB1sNBfv1hkqU1",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=pentatonix+imagine&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=pentatonix+halle&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -1780,18 +1564,6 @@ const daily = [
           type: "track",
           uri: "spotify:track:550rQQCGkrTzvp4SfpOPzx",
         },
-      ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=pentatonix+halle&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
-    },
-  },
-  {
-    tracks: {
-      href: "https://api.spotify.com/v1/search?query=Tenacious+D%2C+Tribute+et+Wonderboy&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=0&limit=1",
-      items: [
         {
           album: {
             album_group: "album",
@@ -1874,11 +1646,6 @@ const daily = [
           uri: "spotify:track:3XPQevBxsl15mKHVsV9nrR",
         },
       ],
-      limit: 1,
-      next: "https://api.spotify.com/v1/search?query=Tenacious+D%2C+Tribute+et+Wonderboy&type=track&market=FR&locale=fr-FR%2Cfr%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7&offset=1&limit=1",
-      offset: 0,
-      previous: null,
-      total: 1000,
     },
   },
 ];

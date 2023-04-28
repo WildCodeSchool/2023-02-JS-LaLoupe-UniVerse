@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export default function AlbumDetails({ token }) {
+export default function AlbumTitreDetails({ token }) {
   const [albumTitreDetails, setAlbumTitreDetails] = useState();
   const { id } = useParams();
 
@@ -24,7 +24,7 @@ export default function AlbumDetails({ token }) {
     if (token !== "") {
       getOneAlbum();
     }
-  }, [id]);
+  }, []);
 
   if (!albumTitreDetails) {
     return <p>Loading album</p>;
@@ -46,11 +46,10 @@ export default function AlbumDetails({ token }) {
           {albumTitreDetails.release_date}
         </p>
       </figcaption>
-      <p>{}</p>
     </figure>
   );
 }
 
-AlbumDetails.propTypes = {
+AlbumTitreDetails.propTypes = {
   token: PropTypes.string.isRequired,
 };

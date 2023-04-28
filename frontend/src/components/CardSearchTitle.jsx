@@ -1,33 +1,43 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export default function CardSearchTitle({
   imgSrc,
-  albumName,
+  titreName,
   artist,
   release,
   duration,
+  id,
 }) {
   return (
-    <figure className=" flex gap-4 bg-neutral-900 rounded-lg hover:bg-pink-600/30 mb-2 sm:mb-0 w-10/12 sm:w-full">
-      <img src={imgSrc} alt={albumName} className="  rounded-l-lg" />
-      <div className="flex justify-between w-full mr-1">
-        <figcaption className="flex flex-col justify-evenly max-w-[70%]">
-          <h2 className="font-bold text-xs/4 text-white/70 sm:text-base md:text-base truncate">
-            {albumName}
-          </h2>
-          <h3 className="text-xs/3 truncate">{artist}</h3>
-          <p className="text-[8px] sm:text-xs">{release}</p>
-        </figcaption>
-        <p className="my-auto font-bold">{duration}</p>
-      </div>
-    </figure>
+    <Link
+      to={`/search/title/${id}`}
+      className="flex gap-4 bg-neutral-900 rounded-lg hover:bg-pink-600/30 mb-2 sm:mb-0 w-10/12 sm:w-full h-20"
+    >
+      <figure className="flex w-full">
+        <img src={imgSrc} alt={titreName} className="rounded-l-lg" />
+        <div className="flex justify-between w-full mr-1 relative">
+          <figcaption className="flex flex-col justify-evenly ml-1 w-8/12 overflow-x-hidden">
+            <h2 className="font-bold text-xs/4 text-white/70 sm:text-base md:text-base truncate">
+              {titreName}
+            </h2>
+            <h3 className="text-xs/3 truncate">{artist}</h3>
+            <p className="text-[8px] sm:text-xs">{release}</p>
+          </figcaption>
+          <p className="my-auto font-bold absolute right-0  top-1/4">
+            {duration}
+          </p>
+        </div>
+      </figure>
+    </Link>
   );
 }
 
 CardSearchTitle.propTypes = {
   imgSrc: PropTypes.string.isRequired,
-  albumName: PropTypes.string.isRequired,
+  titreName: PropTypes.string.isRequired,
   artist: PropTypes.string.isRequired,
   release: PropTypes.string.isRequired,
-  duration: PropTypes.number.isRequired,
+  duration: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };

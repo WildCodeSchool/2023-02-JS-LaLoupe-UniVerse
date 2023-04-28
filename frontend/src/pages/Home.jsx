@@ -15,12 +15,12 @@ export default function Home({ albumsArray }) {
         title="Notre sélection d'artistes"
       />
       <CardListGenre />
-      {albumsArray.length > 0 && (
-        <CardListTitres
-          dataAlbums={daily}
-          title="Pour bien commencer la journée"
-        />
-      )}
+
+      <CardListTitres
+        dataAlbums={daily[0].tracks.items}
+        title="Pour bien commencer la journée"
+      />
+
       <div className=" mb-16 sm:hidden" />
     </main>
   );
