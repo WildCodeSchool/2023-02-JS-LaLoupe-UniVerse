@@ -9,11 +9,7 @@ body {
 }
 @font-face {
   font-family: "Revalia";
-  src: url("../src/assets/Revalia/OFL.ttf");
-}
-
-body {
-  background-color: black;
+  src: url("../src/assets/Revalia/Revalia-Regular.ttf");
 }
 
 ::-webkit-scrollbar {
@@ -25,10 +21,118 @@ body {
   display: none;
 }
 
+#universe {
+  display: flex;
+  font-family: "Revalia";
+  margin-top: 2px;
+  font-size: 29px;
+}
+.vuniverse {
+  background: linear-gradient(to right, #c60606 0%, #da77f2 50%, #e84492 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.degrade {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 55px;
+}
+
+.opaque1 {
+  background-color: rgb(0, 0, 0);
+  width: 50px;
+  height: 60px;
+  color: transparent;
+  opacity: 0.3;
+}
+.opaque2 {
+  background-color: rgb(0, 0, 0);
+  width: 60px;
+  color: transparent;
+  opacity: 0.4;
+  height: 60px;
+}
+
+.arrow {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   ::-webkit-scrollbar-thumb:horizontal {
     display: block;
-    background-color: rgba(94, 92, 92, 0.81);
-    border-radius: 10px;
+    /* background-color: rgba(94, 92, 92, 0.81);
+    border-radius: 10px; */
+  }
+
+  .precedent,
+  .suivant {
+    position: absolute;
+    top: 150px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+  }
+
+  .precedent {
+    left: 1px;
+    transform: rotate(180deg);
+  }
+
+  .suivant {
+    right: 1px;
+  }
+
+  .precedentGenre,
+  .suivantGenre {
+    position: absolute;
+    top: 117px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+  }
+  .precedentGenre {
+    left: 1px;
+    transform: rotate(180deg);
+  }
+
+  .suivantGenre {
+    right: 1px;
+  }
+
+  .arrow {
+    display: block;
+  }
+  #universe {
+    font-size: 5rem;
+  }
+
+  .degrade {
+    height: 160px;
+  }
+  .opaque1 {
+    width: 150px;
+    height: 160px;
+  }
+  .opaque2 {
+    width: 150px;
+    height: 160px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #universe {
+    font-size: 6em;
+  }
+
+  .opaque1 {
+    width: 180px;
+  }
+  .opaque2 {
+    width: 250px;
   }
 }
