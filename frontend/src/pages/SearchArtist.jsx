@@ -12,6 +12,7 @@ export default function SearchArtist() {
           key={artiste.id}
           imgSrc={artiste.images.length === 0 ? null : artiste.images[1].url}
           artisteName={artiste.name}
+          id={artiste.id}
         />
       ))}
     </div>
