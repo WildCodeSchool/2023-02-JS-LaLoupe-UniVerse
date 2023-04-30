@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import headphone from "../assets/headphone_2_line.svg";
 import search from "../assets/search_2_line.svg";
 import radio from "../assets/radio_line.svg";
+import LightMode from "./LightMode";
 
 const NavBar = () => {
   return (
@@ -59,6 +60,7 @@ const NavBar = () => {
             </div>
           )}
         </NavLink>
+        <LightMode />
       </nav>
     </div>
   );

@@ -3,9 +3,9 @@ import headerImg from "../assets/image.png";
 
 export default function Header() {
   return (
-    <header className=" bg-black h-14 sm:h-24 md:h-40  ">
+    <header className=" header-light  bg-black h-14 sm:h-24 w-full md:h-40 ">
       <img
-        className="right-0 top-0.5 opacity-50 h-full 4 "
+        className="right-0 top-0.5 opacity-50  h-5/6  "
         src={headerImg}
         alt="wave"
       />

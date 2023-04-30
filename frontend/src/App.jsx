@@ -6,6 +6,8 @@ import Search from "./pages/Search";
 import NavBar from "./components/NavBar";
 import NavBarPc from "./components/NavBarPC";
 import "./App.css";
+import "./LightModeCSS/LightMode.css";
+import "./LightModeCSS/ButtonLightMode.css";
 import authParameters from "./data/codesAccesAPI";
 import SearchAll from "./pages/SearchAll";
 import SearchArtist from "./pages/SearchArtist";

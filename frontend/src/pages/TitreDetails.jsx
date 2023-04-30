@@ -85,8 +85,8 @@ export default function TitreDetails({ token }) {
 
   return (
     <main>
-      <figure className="flex flex-col mr-4 ml-4 my-5 pb-5 bg-pink-900/20 md:justify-center md:py-12 md:my-12 md:ml-80 md:mr-14  ">
-        <div className="  md:bg-pink-600/20 p-8 md:flex md:ml-20 md:mr-20 md:h-80">
+      <figure className="card-light flex flex-col mr-4 ml-4 my-5 pb-5 bg-pink-900/20 md:justify-center md:py-12 md:my-12 md:ml-80 md:mr-14  ">
+        <div className=" card-light-second md:bg-pink-600/20 p-8 md:flex md:ml-20 md:mr-20 md:h-80">
           <div className="flex md:w-60 justify-center md:justify-start">
             <img
               className=" w-46 h-46 md:w-64 md:h-64"
@@ -95,11 +95,11 @@ export default function TitreDetails({ token }) {
             />
           </div>
           <div>
-            <figcaption className="flex flex-col md:ml-14  md:flex-col ">
-              <h3 className="font-bold text-white/70 mt-5 text-sm md:mb-1 md:text-xl ">
+            <figcaption className=" flex flex-col md:ml-14  md:flex-col ">
+              <h3 className="card-light-second font-bold text-white/70 mt-5 text-sm md:mb-1 md:text-xl ">
                 Titre
               </h3>
-              <h2 className="font-bold mt-2 text-base mb-1 text-white md:text-3xl md:mb-5">
+              <h2 className="card-light-second font-bold mt-2 text-base mb-1 text-white md:text-3xl md:mb-5">
                 {titreDetails.name}
               </h2>
               <p>{convertNumberMsEnMin(titreDetails.duration_ms)}</p>
@@ -116,11 +116,11 @@ export default function TitreDetails({ token }) {
                   alt={titreDetails.artists[0].name}
                 />
                 <div>
-                  <p className="text-sm  md:text-lg p-2 rounded-md ">
+                  <p className="card-light-second text-sm  md:text-lg p-2 rounded-md ">
                     {titreDetails.artists[0].name}
                   </p>{" "}
                   <Link to={`/search/album/${titreDetails.album.id}`}>
-                    <p className=" text-base p-2 rounded-md">
+                    <p className="card-light-second text-base p-2 rounded-md">
                       {titreDetails.album.name} /{" "}
                       {titreDetails.album.release_date.slice(0, 4)}
                     </p>

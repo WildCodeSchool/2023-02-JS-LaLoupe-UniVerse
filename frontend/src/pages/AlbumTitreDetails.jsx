@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import CardListTitres from "../components/CardListTitres";
 
 export default function AlbumTitreDetails({ token }) {
   const [albumTitreDetails, setAlbumTitreDetails] = useState();
   const [artisteDetail, setArtisteDetail] = useState();
+  const [recommendationDetails, setRecommendationDetails] = useState();
   const { id } = useParams();
 
   const convertNumberMsEnMin = (number) => {
@@ -36,6 +38,16 @@ export default function AlbumTitreDetails({ token }) {
             setArtisteDetail(artisteData);
           })
           .catch((err) => console.error(err));
+
+        fetch(
+          `https://api.spotify.com/v1/recommendations?seed_artists=${albumData.artists[0].id}&seed_tracks=${id}&limit=20&market=FR`,
+          albumParameters
+        )
+          .then((r) => r.json())
+          .then((recommendationsData) => {
+            setRecommendationDetails(recommendationsData);
+          })
+          .catch((err) => console.error(err));
       })
       .catch((err) => console.error(err));
   };
@@ -52,11 +64,14 @@ export default function AlbumTitreDetails({ token }) {
   if (!artisteDetail) {
     return <p>Loading artiste</p>;
   }
+  if (!recommendationDetails) {
+    return <p>Chargement des recommendations</p>;
+  }
 
   return (
-    <div>
-      <figure className="flex flex-col mr-4 ml-4 mt-5 pb-8 bg-pink-900/20 md:justify-center md:pt-12 md:mt-12 md:ml-80 md:mr-14  ">
-        <div className="  md:bg-pink-600/20 p-8 md:flex md:ml-20 md:mr-20 md:h-80">
+    <div className="card">
+      <figure className="card-light flex flex-col mr-4 ml-4 mt-5 pb-8 bg-pink-900/20 md:justify-center md:pt-12 md:mt-12 md:ml-80 md:mr-14  ">
+        <div className=" card-light-second  md:bg-pink-600/20 p-8 md:flex md:ml-20 md:mr-20 md:h-80">
           <div className="flex md:w-60 justify-center md:justify-start">
             <img
               className=" w-46 h-46 md:w-64 md:h-64 "
@@ -66,10 +81,10 @@ export default function AlbumTitreDetails({ token }) {
           </div>
           <div>
             <figcaption className="flex flex-col md:ml-14  md:flex-col ">
-              <h3 className="font-bold text-white/70 mt-5 text-sm md:mb-1 md:text-xl ">
+              <h3 className="card-light-second font-bold text-white/70 mt-5 text-sm md:mb-1 md:text-xl ">
                 Album
               </h3>
-              <h2 className="font-bold mt-2 text-base mb-1 text-white md:text-3xl md:mb-5">
+              <h2 className="card-light-second font-bold mt-2 text-base mb-1 text-white md:text-3xl md:mb-5">
                 {albumTitreDetails.name}
               </h2>
               <h3>{albumTitreDetails.id.name}</h3>
@@ -85,13 +100,13 @@ export default function AlbumTitreDetails({ token }) {
               </div>
             </figcaption>
             <Link to={`/search/artist/${artisteDetail.id}`}>
-              <div className="flex items-center font-bold text-base mt-4 md:mt-9 text-white/70 md:text-xl md:ml-12 md:justify-start">
+              <div className="card-light-second flex items-center font-bold text-base mt-4 md:mt-9 text-white/70 md:text-xl md:ml-12 md:justify-start">
                 <img
                   className="rounded-full w-12 h-12 md:w-16 md:h-16 mr-4"
                   src={artisteDetail.images[0].url}
                   alt={artisteDetail.name}
                 />
-                <p className="text-sm  md:text-lg  ">
+                <p className="  text-sm  md:text-lg  ">
                   {albumTitreDetails.artists[0].name}
                 </p>
               </div>
@@ -115,9 +130,13 @@ export default function AlbumTitreDetails({ token }) {
           ))}
         </div>
       </figure>
-      <p className="ml-8 mt-8  text-base md:text-2xl md:ml-60 md:mt-12">
-        Vous devriez aussi aimer
-      </p>
+      {recommendationDetails !== "" && (
+        <CardListTitres
+          dataAlbums={recommendationDetails.tracks}
+          title="Vous devriez aimer"
+        />
+      )}
+
       <div className=" mb-16 sm:hidden" />
     </div>
   );

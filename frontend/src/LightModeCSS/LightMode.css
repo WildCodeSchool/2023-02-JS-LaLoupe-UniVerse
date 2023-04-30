@@ -1,0 +1,50 @@
+:root {
+  --background-card-first: rgb(182, 135, 226);
+  --background-card-second: rgb(209, 155, 235);
+  /* --color-card: black; */
+}
+
+body.light {
+  /* background-image: linear-gradient(315deg, #d28be4 5%, #b6a5e9 95%); */
+  background-image: linear-gradient(135deg, #b6a5e9 62%, #dad0dd 88%);
+  color: white;
+}
+
+/*cardTitre*/
+.light .card-title {
+  background-color: var(--background-card-first);
+}
+.light .card-title:hover {
+  background-color: var(--background-card-second);
+}
+
+/*cardArtiste*/
+.light .card-artiste {
+  background-color: var(--background-card-first);
+}
+.light .card-artiste:hover {
+  background-color: var(--background-card-second);
+}
+
+/*cardGenree*/
+.light .card-genre {
+  background-color: var(--background-card-first);
+}
+.light .card-genre:hover {
+  background-color: var(--background-card-second);
+}
+
+/* AlbumTitreDetails,titreDetails, artistDetails, cardGenre */
+.light .card-light {
+  background-color: var(--background-card-first);
+  color: var(--color-card);
+}
+
+.light .card-light-second {
+  background-color: var(--background-card-second);
+  color: var(--color-card);
+}
+/*button Slider*/
+.light .slider {
+  background-color: rgb(174, 129, 196);
+}

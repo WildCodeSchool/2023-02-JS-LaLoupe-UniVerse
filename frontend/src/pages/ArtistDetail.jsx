@@ -111,8 +111,8 @@ export default function ArtistDetail({ token }) {
 
   return (
     <div>
-      <figure className="flex flex-col mr-4 ml-4 mt-5 bg-pink-900/20 md:justify-center md:pt-12 md:mt-12 md:ml-80 md:mr-14  ">
-        <div className="  md:bg-pink-600/20 p-8 md:flex md:ml-20 md:mr-20 md:h-80">
+      <figure className="card-light flex flex-col mr-4 ml-4 mt-5 bg-pink-900/20 md:justify-center md:pt-12 md:mt-12 md:ml-80 md:mr-14  ">
+        <div className=" card-light-second md:bg-pink-600/20 p-8 md:flex md:ml-20 md:mr-20 md:h-80">
           <div className="flex md:w-60 justify-center md:justify-start">
             <img
               className=" w-46 h-46 md:w-64 md:h-64 "
@@ -133,7 +133,7 @@ export default function ArtistDetail({ token }) {
           </div>
         </div>
 
-        <div className="flexflex-col ml-6 mr-6 justify-center md:ml-20 md:mt-10 ">
+        <div className="flexflex-col ml-6 mr-6 p-10 justify-center md:ml-20  ">
           <h2 className="mt-6 ml-2 text-2xl mb-5">Ses plus grands Hits</h2>
           {tracks.tracks.map((item) => (
             <Link to={`/search/title/${item.id}`}>
