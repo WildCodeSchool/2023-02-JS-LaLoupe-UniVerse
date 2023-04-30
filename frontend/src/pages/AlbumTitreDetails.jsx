@@ -55,7 +55,7 @@ export default function AlbumTitreDetails({ token }) {
 
   return (
     <div>
-      <figure className="flex flex-col mr-4 ml-4 mt-5 bg-pink-900/20 md:justify-center md:pt-12 md:mt-12 md:ml-80 md:mr-14  ">
+      <figure className="flex flex-col mr-4 ml-4 mt-5 pb-8 bg-pink-900/20 md:justify-center md:pt-12 md:mt-12 md:ml-80 md:mr-14  ">
         <div className="  md:bg-pink-600/20 p-8 md:flex md:ml-20 md:mr-20 md:h-80">
           <div className="flex md:w-60 justify-center md:justify-start">
             <img
@@ -104,19 +104,20 @@ export default function AlbumTitreDetails({ token }) {
             <Link to={`/search/title/${item.id}`}>
               <div className="flex justify-between mt-1">
                 <p className="  text-sm md:text-lg md:ml-8 " key={item.id}>
-                  {item.track_number} {item.name}{" "}
+                  {item.track_number} {" . "} {item.name}
                 </p>
+
                 <p className=" text-sm md:text-lg md:mr-24">
                   {convertNumberMsEnMin(item.duration_ms)}
                 </p>
               </div>
             </Link>
           ))}
-          <p className="mt-8 text-base md:text-2xl md:mt-12">
-            Vous devriez aussi aimer
-          </p>
         </div>
       </figure>
+      <p className="ml-8 mt-8  text-base md:text-2xl md:ml-60 md:mt-12">
+        Vous devriez aussi aimer
+      </p>
     </div>
   );
 }
