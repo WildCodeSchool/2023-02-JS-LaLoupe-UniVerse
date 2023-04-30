@@ -9,7 +9,9 @@ import daily from "../data/dailyXavier";
 export default function Home({ albumsArray }) {
   return (
     <main>
-      {albumsArray.length > 0 && <CardList dataAlbums={albumsArray} />}
+      {albumsArray.length > 0 && (
+        <CardList dataAlbums={albumsArray} title="Nouveautés" />
+      )}
       <CardListArtiste
         dataArtist={artisteApi}
         title="Notre sélection d'artistes"

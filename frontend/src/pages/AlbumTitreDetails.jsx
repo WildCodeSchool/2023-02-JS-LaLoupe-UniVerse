@@ -84,10 +84,10 @@ export default function AlbumTitreDetails({ token }) {
                 </p>
               </div>
             </figcaption>
-            <Link to={`/search/artiste/${artisteDetail.id}`}>
+            <Link to={`/search/artist/${artisteDetail.id}`}>
               <div className="flex items-center font-bold text-base mt-4 md:mt-9 text-white/70 md:text-xl md:ml-12 md:justify-start">
                 <img
-                  className="rounded-full w-12 md:w-16 mr-4"
+                  className="rounded-full w-12 h-12 md:w-16 md:h-16 mr-4"
                   src={artisteDetail.images[0].url}
                   alt={artisteDetail.name}
                 />
@@ -118,6 +118,7 @@ export default function AlbumTitreDetails({ token }) {
       <p className="ml-8 mt-8  text-base md:text-2xl md:ml-60 md:mt-12">
         Vous devriez aussi aimer
       </p>
+      <div className=" mb-16 sm:hidden" />
     </div>
   );
 }

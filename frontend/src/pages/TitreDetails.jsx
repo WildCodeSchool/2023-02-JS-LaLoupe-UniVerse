@@ -85,67 +85,68 @@ export default function TitreDetails({ token }) {
 
   return (
     <main>
-      <figure className="bg-neutral-900 hover:bg-pink-600/30 duration-150 rounded-md py-1 pb-1 px-2 h-64 w-56 m-auto mb-5">
-        <img
-          className="rounded-md m-auto"
-          src={titreDetails.album.images[0].url}
-          alt={titreDetails.name}
-        />
-        <figcaption className="flex justify-between items-center text-white/60 mt-2">
-          <h2 className=" text-center font-bold text-md text-white/70 truncate">
-            {titreDetails.name}
-          </h2>
-          <p className="font-bold">
-            {convertNumberMsEnMin(titreDetails.duration_ms)}
-          </p>
-        </figcaption>
-      </figure>
-      <Link to={`/search/artiste/${artisteDetail.id}`}>
-        <h2 className="text-center">Artiste</h2>
-        <figure className="bg-neutral-900 hover:bg-pink-600/30 flex justify-between items-center duration-150 rounded-md py-1 px-2 h-32 w-10/12 m-auto">
-          <img
-            className="rounded-full w-24 h-24 md:w-48 md:h-48 sm:w-36 sm:h-36"
-            src={
-              artisteDetail.images[0].url ? artisteDetail.images[0].url : null
-            }
-            alt={titreDetails.artists[0].name}
-          />
-          <figcaption className="text-white/60 truncate">
-            <h2 className=" text-center font-bold text-md text-white/70 truncate">
-              {titreDetails.artists[0].name}
-            </h2>
-          </figcaption>
-        </figure>
-      </Link>
-      <section>
-        <h2 className="text-center">Album</h2>
-        <Link to={`/search/album/${titreDetails.album.id}`}>
-          <figure className="bg-neutral-900 hover:bg-pink-600/30 flex justify-between items-center duration-150 rounded-md py-1 px-2 w-10/12 m-auto">
+      <figure className="flex flex-col mr-4 ml-4 my-5 pb-5 bg-pink-900/20 md:justify-center md:py-12 md:my-12 md:ml-80 md:mr-14  ">
+        <div className="  md:bg-pink-600/20 p-8 md:flex md:ml-20 md:mr-20 md:h-80">
+          <div className="flex md:w-60 justify-center md:justify-start">
             <img
-              className="w-9 h-9"
-              src={
-                titreDetails.album.images[0].url
-                  ? titreDetails.album.images[0].url
-                  : null
-              }
-              alt={titreDetails.album.name}
+              className=" w-46 h-46 md:w-64 md:h-64"
+              src={titreDetails.album.images[0].url}
+              alt={titreDetails.name}
             />
-            <figcaption>
-              <h2>{titreDetails.album.name}</h2>
-              <p>{titreDetails.album.release_date.slice(0, 4)}</p>
-            </figcaption>
-          </figure>
-        </Link>
-        {albumDetails.tracks.items.map((track) => (
-          <div
-            key={track.id}
-            className="flex justify-between opacity-60 w-10/12 m-auto"
-          >
-            <p>{track.name}</p>
-            <p>{convertNumberMsEnMin(track.duration_ms)}</p>
           </div>
-        ))}
-      </section>
+          <div>
+            <figcaption className="flex flex-col md:ml-14  md:flex-col ">
+              <h3 className="font-bold text-white/70 mt-5 text-sm md:mb-1 md:text-xl ">
+                Titre
+              </h3>
+              <h2 className="font-bold mt-2 text-base mb-1 text-white md:text-3xl md:mb-5">
+                {titreDetails.name}
+              </h2>
+              <p>{convertNumberMsEnMin(titreDetails.duration_ms)}</p>
+            </figcaption>
+            <Link to={`/search/artist/${artisteDetail.id}`}>
+              <div className="flex items-center font-bold text-base mt-4 md:mt-9 text-white/70 md:text-xl md:ml-12 md:justify-start">
+                <img
+                  className="rounded-full w-16 h-16 md:w-16 md:h-16 mr-4"
+                  src={
+                    artisteDetail.images[0].url
+                      ? artisteDetail.images[0].url
+                      : null
+                  }
+                  alt={titreDetails.artists[0].name}
+                />
+                <div>
+                  <p className="text-sm  md:text-lg p-2 rounded-md ">
+                    {titreDetails.artists[0].name}
+                  </p>{" "}
+                  <Link to={`/search/album/${titreDetails.album.id}`}>
+                    <p className=" text-base p-2 rounded-md">
+                      {titreDetails.album.name} /{" "}
+                      {titreDetails.album.release_date.slice(0, 4)}
+                    </p>
+                  </Link>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+        <section>
+          <h2 className=" mx-6 md:mx-24 my-8 text-xl">Dans le même album</h2>
+          {albumDetails.tracks.items.map((track) => (
+            <Link to={`/search/title/${track.id}`}>
+              <div
+                key={track.id}
+                className="flex justify-between mt-1 md:mx-24 mx-6"
+              >
+                <p className="  text-sm md:text-lg ">{track.name}</p>
+                <p className=" text-sm md:text-lg ">
+                  {convertNumberMsEnMin(track.duration_ms)}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </section>
+      </figure>
 
       {recommendationDetails !== "" && (
         <CardListTitres

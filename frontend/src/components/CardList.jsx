@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import CardAlbumTitre from "./CardAlbumTitre";
 import arrow from "../assets/FlecheIcons/chevron.png";
 
-export default function CardList({ dataAlbums }) {
+export default function CardList({ dataAlbums, title }) {
   const sliderListRef = useRef();
 
   function scrollLeft() {
@@ -17,7 +17,7 @@ export default function CardList({ dataAlbums }) {
   }
   return (
     <div className=" relative md:ml-[236px] mt-2 md:pr-5 md:pl-5 md:mr-3 mx-3">
-      <h1 className="mb-4  text sm:text-xl md:text-2xl">Nouveautés</h1>
+      <h1 className="mb-4  text sm:text-xl md:text-2xl">{title}</h1>
       <div>
         <div
           ref={sliderListRef}
@@ -47,6 +47,6 @@ export default function CardList({ dataAlbums }) {
 }
 
 CardList.propTypes = {
-  dataAlbums: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
-    .isRequired,
+  dataAlbums: PropTypes.arrayOf(PropTypes.string).isRequired,
+  title: PropTypes.string.isRequired,
 };

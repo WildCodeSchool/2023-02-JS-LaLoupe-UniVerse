@@ -11,6 +11,7 @@ import SearchAll from "./pages/SearchAll";
 import SearchArtist from "./pages/SearchArtist";
 import SearchAlbum from "./pages/SearchAlbum";
 import SearchTitle from "./pages/SearchTitle";
+import ArtistDetail from "./pages/ArtistDetail";
 import AlbumTitreDetails from "./pages/AlbumTitreDetails";
 import TitreDetails from "./pages/TitreDetails";
 
@@ -58,6 +59,10 @@ function App() {
       <Header />
       <Routes>
         <Route index element={<Home albumsArray={albums} />} />
+        <Route
+          path="search/artist/:id"
+          element={<ArtistDetail token={accessToken} />}
+        />
         <Route
           path="search/album/:id"
           element={<AlbumTitreDetails token={accessToken} />}

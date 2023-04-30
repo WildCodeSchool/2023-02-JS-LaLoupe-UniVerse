@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import PropTypes from "prop-types";
 import CardTitre from "./CardTitre";
+import arrow from "../assets/FlecheIcons/chevron.png";
 
 export default function CardListTitres({ dataAlbums, title }) {
   const sliderListRef = useRef();
@@ -43,18 +44,10 @@ export default function CardListTitres({ dataAlbums, title }) {
           ))}
         </div>
         <button className="precedent" onClick={scrollLeft} type="button">
-          <img
-            className="arrow"
-            src="./src/assets/FlecheIcons/chevron.png "
-            alt="fleche-gauche"
-          />
+          <img className="arrow" src={arrow} alt="fleche-gauche" />
         </button>
         <button className="suivant" onClick={scrollRight} type="button">
-          <img
-            className="arrow"
-            src="./src/assets/FlecheIcons/chevron.png "
-            alt="fleche-droite"
-          />
+          <img className="arrow" src={arrow} alt="fleche-droite" />
         </button>
       </div>
     </div>
