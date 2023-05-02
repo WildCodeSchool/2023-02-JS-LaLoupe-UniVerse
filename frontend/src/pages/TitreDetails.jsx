@@ -71,21 +71,41 @@ export default function TitreDetails({ token }) {
   }, [id]);
 
   if (!titreDetails) {
-    return <p>Chargement titre</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Chargement titre</p>
+        <span className="loader  " />
+      </div>
+    );
   }
   if (!artisteDetail) {
-    return <p>Chargement artiste</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20  md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Loading artiste</p>
+        <span className="loader  " />
+      </div>
+    );
   }
   if (!albumDetails) {
-    return <p>Chargement album</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Loading album</p>
+        <span className="loader  " />
+      </div>
+    );
   }
   if (!recommendationDetails) {
-    return <p>Chargement des recommendations</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20  md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Chargement des recommendations</p>
+        <span className="loader  " />
+      </div>
+    );
   }
 
   return (
     <main>
-      <figure className="card-light flex flex-col mr-4 ml-4 my-5 pb-5 bg-pink-900/20 md:justify-center md:py-12 md:my-12 md:ml-80 md:mr-14  ">
+      <figure className="card-light flex flex-col mr-4 ml-4 my-5 pb-5 bg-pink-900/20 md:justify-center md:py-12 md:my-5 md:ml-80 md:mr-14  ">
         <div className=" card-light-second md:bg-pink-600/20 p-8 md:flex md:ml-20 md:mr-20 md:h-80">
           <div className="flex md:w-60 justify-center md:justify-start">
             <img

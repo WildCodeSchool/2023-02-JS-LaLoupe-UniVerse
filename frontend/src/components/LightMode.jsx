@@ -22,7 +22,7 @@ export default function DarkMode() {
     if (theme === darkTheme) {
       body.classList.replace(darkTheme, lightTheme);
       e.target.classList.toggle(clickedClass);
-      localStorage.setItem("theme", "light");
+      localStorage.setItem("theme", "dark");
       theme = lightTheme;
     } else {
       body.classList.replace(lightTheme, darkTheme);
@@ -33,7 +33,7 @@ export default function DarkMode() {
   };
 
   return (
-    <div className="absolute left-10 ">
+    <div className="relative top-0  md:ml-10 ">
       <label className="switch ">
         <input
           className={theme === "dark" ? clickedClass : ""}

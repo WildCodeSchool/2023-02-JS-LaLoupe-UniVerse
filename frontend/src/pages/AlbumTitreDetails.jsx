@@ -59,18 +59,33 @@ export default function AlbumTitreDetails({ token }) {
   }, []);
 
   if (!albumTitreDetails) {
-    return <p>Loading album</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20  md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Loading album</p>
+        <span className="loader  " />
+      </div>
+    );
   }
   if (!artisteDetail) {
-    return <p>Loading artiste</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Loading artist</p>
+        <span className="loader  " />
+      </div>
+    );
   }
   if (!recommendationDetails) {
-    return <p>Chargement des recommendations</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Chargement des recommendations</p>
+        <span className="loader  " />
+      </div>
+    );
   }
 
   return (
     <div className="card">
-      <figure className="card-light flex flex-col mr-4 ml-4 mt-5 pb-8 bg-pink-900/20 md:justify-center md:pt-12 md:mt-12 md:ml-80 md:mr-14  ">
+      <figure className="card-light flex flex-col mr-4 mb-5 ml-4 mt-5 pb-8 bg-pink-900/20 md:justify-center  md:pt-12 md:mt-12 md:ml-80 md:mr-14  ">
         <div className=" card-light-second  md:bg-pink-600/20 p-8 md:flex md:ml-20 md:mr-20 md:h-80">
           <div className="flex md:w-60 justify-center md:justify-start">
             <img

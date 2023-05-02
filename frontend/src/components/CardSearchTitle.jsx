@@ -12,7 +12,7 @@ export default function CardSearchTitle({
   return (
     <Link
       to={`/search/title/${id}`}
-      className="flex gap-4 bg-neutral-900 rounded-lg hover:bg-pink-600/30 mb-2 sm:mb-0 w-10/12 sm:w-full h-20"
+      className="card-light flex gap-4 bg-neutral-900 rounded-lg hover:bg-pink-600/30 mb-2 sm:mb-0 w-10/12 sm:w-full h-20"
     >
       <figure className="flex w-full">
         <img src={imgSrc} alt={titreName} className="rounded-l-lg" />
@@ -24,7 +24,7 @@ export default function CardSearchTitle({
             <h3 className="text-xs/3 truncate">{artist}</h3>
             <p className="text-[8px] sm:text-xs">{release}</p>
           </figcaption>
-          <p className="my-auto font-bold absolute right-0  top-1/4">
+          <p className="my-auto font-bold absolute right-0 top-1/4">
             {duration}
           </p>
         </div>

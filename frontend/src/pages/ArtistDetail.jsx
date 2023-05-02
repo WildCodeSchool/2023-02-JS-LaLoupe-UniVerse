@@ -94,19 +94,39 @@ export default function ArtistDetail({ token }) {
   }, [id]);
 
   if (!artist) {
-    return <p>Loading artiste</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20  md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Loading artist</p>
+        <span className="loader  " />
+      </div>
+    );
   }
 
   if (!tracks) {
-    return <p>Loading tracks</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Loading tracks</p>
+        <span className="loader  " />
+      </div>
+    );
   }
 
   if (!album) {
-    return <p>Loading album</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Loading album</p>
+        <span className="loader  " />
+      </div>
+    );
   }
 
   if (!relatedArtist) {
-    return <p>Loading related artist</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Loading arelated artist</p>
+        <span className="loader  " />
+      </div>
+    );
   }
 
   return (
@@ -150,7 +170,7 @@ export default function ArtistDetail({ token }) {
         </div>
       </figure>
 
-      <section>
+      <section className="mt-5">
         <CardList dataAlbums={album.items} title="Discographie" />
         <CardListArtiste
           dataArtist={relatedArtist.artists}
