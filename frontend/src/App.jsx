@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Search from "./pages/Search";
 import NavBar from "./components/NavBar";
 import NavBarPc from "./components/NavBarPC";
+import Footer from "./components/Footer";
 import "./App.css";
 import "./LightModeCSS/LightMode.css";
 import "./LightModeCSS/ButtonLightMode.css";
@@ -91,6 +92,7 @@ function App() {
           </Route>
         </Routes>
         <NavBar />
+        <Footer />
       </>
     </TokenContext.Provider>
   );

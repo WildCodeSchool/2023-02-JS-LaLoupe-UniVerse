@@ -1,19 +1,33 @@
 :root {
-  --background-card-first: rgb(182, 135, 226);
-  --background-card-second: rgb(209, 155, 235);
+  --background-card-first: rgb(107, 28, 57);
+  --background-card-second: #8d3e51;
   --background-card-item: rgb(223, 206, 231);
+}
 
-  /* --color-card: black; */
+.light .header-light {
+  background-color: rgb(51, 10, 26);
+}
+
+.light .logo {
+  background-color: var(--background-card-second);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
 }
 
 body.light {
   /* background-image: linear-gradient(315deg, #d28be4 5%, #b6a5e9 95%); */
-  background-image: linear-gradient(135deg, #b6a5e9 62%, #dad0dd 88%);
-  color: white;
+  background-image: linear-gradient(135deg, #fefeef 62%, #ffffff 88%);
+  color: black;
 }
 
-.light .header-light {
-  background-color: rgb(42, 21, 50);
+.light nav div {
+  color: black;
+}
+
+.light .footer {
+  background-color: rgb(107, 28, 57);
 }
 
 /*cardTitre*/
@@ -43,7 +57,6 @@ body.light {
 /* AlbumTitreDetails,titreDetails, artistDetails,cardSearchTile, cardGenre */
 .light .card-light {
   background-color: var(--background-card-first);
-  color: var(--color-card);
 }
 
 .light .card-light-item {
@@ -52,10 +65,9 @@ body.light {
 
 .light .card-light-second {
   background-color: var(--background-card-second);
-  color: var(--color-card);
 }
 /*button Slider*/
 .light .slider {
   opacity: 1;
-  background-color: rgb(173, 112, 203);
+  background-color: #ae5b6e;
 }

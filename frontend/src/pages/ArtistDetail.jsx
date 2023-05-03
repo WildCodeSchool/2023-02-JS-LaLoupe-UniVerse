@@ -143,10 +143,10 @@ export default function ArtistDetail({ token }) {
           </div>
           <div>
             <figcaption className="flex flex-col md:ml-14  md:flex-col ">
-              <h3 className="font-bold text-white/70 mt-5 text-sm md:mb-1 md:text-xl ">
+              <h3 className="card-artiste card-light-second font-bold text-white/70 mt-5 text-sm md:mb-1 md:text-xl ">
                 Artiste
               </h3>
-              <h2 className="font-bold mt-2 text-base mb-1 text-white md:text-3xl md:mb-5">
+              <h2 className="card-artiste card-light-second font-bold mt-2 text-base mb-1 text-white md:text-3xl md:mb-5">
                 {artist.name}
               </h2>
             </figcaption>
