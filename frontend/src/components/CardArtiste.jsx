@@ -6,7 +6,7 @@ export default function CardArtiste({ imgSrc, artisteName, id }) {
     <Link to={`/search/artist/${id}`}>
       <figure className="card-artiste bg-neutral-900 hover:bg-pink-600/30 duration-150 h-36 rounded-md flex-none m-0 py-1 pb-2 px-2 w-28 sm:h-56 sm:w-44 md:h-64 md:w-56 ">
         <img
-          className="rounded-full w-24 h-24  md:w-48 md:h-52 
+          className="rounded-full w-24 h-24  md:w-48 md:h-48 
          m-auto sm:py-2 md:rounded-full sm:w-36 sm:h-36 "
           id="CardAlbum"
           src={imgSrc}

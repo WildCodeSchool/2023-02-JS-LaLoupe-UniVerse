@@ -18,7 +18,7 @@ export default function SearchAll() {
 
   return (
     <div>
-      <section className="sm:flex sm:justify-center md:ml-[236px] mb-6 md:pl-5">
+      <section className="sm:flex sm:justify-center md:ml-[180px] lg:ml-[236px] mb-6 md:pl-5">
         <figure>
           {searchResultAlbum.length > 0 && (
             <figcaption className="mb-5 mx-10">

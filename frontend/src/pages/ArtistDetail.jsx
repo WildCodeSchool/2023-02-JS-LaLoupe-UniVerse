@@ -90,6 +90,7 @@ export default function ArtistDetail({ token }) {
       getOneAlbum();
       getOneTracks();
       getRelatedArtist();
+      window.scroll(0, 0);
     }
   }, [id]);
 
@@ -131,11 +132,11 @@ export default function ArtistDetail({ token }) {
 
   return (
     <div>
-      <figure className="card-light flex flex-col mr-4 ml-4 mt-5 bg-pink-900/20 md:justify-center md:pt-12 md:mt-12 md:ml-80 md:mr-14  ">
-        <div className=" card-light-second md:bg-pink-600/20 p-8 md:flex md:ml-20 md:mr-20 md:h-80">
-          <div className="flex md:w-60 justify-center md:justify-start">
+      <figure className="card-light flex flex-col mr-4 ml-4 my-5 pb-5 bg-pink-900/20 md:justify-center md:py-12 md:my-12 md:ml-60 lg:ml-80 md:mr-14  ">
+        <div className=" card-light-second md:bg-pink-600/20 p-8  md:ml-20 md:mr-20 lg:flex lg:gap-8 lg:justify-around">
+          <div className="flex justify-center items-center">
             <img
-              className=" w-46 h-46 md:w-64 md:h-64 "
+              className=" w-10/12 sm:w-7/12 md:w-auto md:h-auto lg:w-52 lg:h-auto lg:items-center "
               id={artist.id}
               src={artist.images[0].url}
               alt={artist.images ? artist.name : null}
@@ -153,8 +154,8 @@ export default function ArtistDetail({ token }) {
           </div>
         </div>
 
-        <div className="flexflex-col ml-6 mr-6 p-10 justify-center md:ml-20  ">
-          <h2 className="mt-6 ml-2 text-2xl mb-5">Ses plus grands Hits</h2>
+        <div className="flexflex-col ml-6 mr-6 justify-center md:ml-20 md:mt-10 ">
+          <h2 className="mt-6 ml-8 text-2xl mb-5">Ses plus grands Hits</h2>
           {tracks.tracks.map((item) => (
             <Link to={`/search/title/${item.id}`}>
               <div className="flex justify-between mt-1">
@@ -170,11 +171,12 @@ export default function ArtistDetail({ token }) {
         </div>
       </figure>
 
-      <section className="mt-5">
-        <CardList dataAlbums={album.items} title="Discographie" />
+      <section>
+        <CardList dataAlbums={album.items} title="Discographie" id={id} />
         <CardListArtiste
           dataArtist={relatedArtist.artists}
           title="Vous devriez aussi aimer"
+          id={id}
         />
       </section>
     </div>
