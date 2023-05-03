@@ -1,9 +1,10 @@
-import { useRef } from "react";
+import PropTypes from "prop-types";
+import { useRef, useEffect } from "react";
 import CardGenre from "./CardGenre";
 import genreAPI from "../data/genreAPI";
 import arrow from "../assets/FlecheIcons/chevron.png";
 
-export default function CardListGenre() {
+export default function CardListGenre({ id }) {
   const sliderGenreRef = useRef();
 
   function scrollLeft() {
@@ -16,8 +17,16 @@ export default function CardListGenre() {
     sliderGenreRef.current.scrollBy(width * 4 + 12, 0);
   }
 
+  useEffect(() => {
+    scrollLeft();
+    scrollLeft();
+    scrollLeft();
+    scrollLeft();
+    scrollLeft();
+  }, [id]);
+
   return (
-    <div className="relative  md:ml-[236px] md:pr-5 md:pl-5  md:mr-3 mx-3">
+    <div className="relative  md:ml-[180px] lg:ml-[236px] md:pr-5 md:pl-5  md:mr-3 mx-3">
       <h1 className="mb-4 text sm:text-xl md:text-2xl">Genres</h1>
       <div
         ref={sliderGenreRef}
@@ -37,3 +46,7 @@ export default function CardListGenre() {
     </div>
   );
 }
+
+CardListGenre.propTypes = {
+  id: PropTypes.string.isRequired,
+};
