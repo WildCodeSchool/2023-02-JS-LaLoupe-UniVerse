@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import CardListTitres from "../components/CardListTitres";
 
 export default function AlbumTitreDetails({ token }) {
   const [albumTitreDetails, setAlbumTitreDetails] = useState();
   const [artisteDetail, setArtisteDetail] = useState();
+  const [recommendationDetails, setRecommendationDetails] = useState();
   const { id } = useParams();
 
   const convertNumberMsEnMin = (number) => {
@@ -36,6 +38,16 @@ export default function AlbumTitreDetails({ token }) {
             setArtisteDetail(artisteData);
           })
           .catch((err) => console.error(err));
+
+        fetch(
+          `https://api.spotify.com/v1/recommendations?seed_artists=${albumData.artists[0].id}&seed_tracks=${id}&limit=20&market=FR`,
+          albumParameters
+        )
+          .then((r) => r.json())
+          .then((recommendationsData) => {
+            setRecommendationDetails(recommendationsData);
+          })
+          .catch((err) => console.error(err));
       })
       .catch((err) => console.error(err));
   };
@@ -48,10 +60,28 @@ export default function AlbumTitreDetails({ token }) {
   }, [id]);
 
   if (!albumTitreDetails) {
-    return <p>Loading album</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20  md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Loading album</p>
+        <span className="loader  " />
+      </div>
+    );
   }
   if (!artisteDetail) {
-    return <p>Loading artiste</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Loading artist</p>
+        <span className="loader  " />
+      </div>
+    );
+  }
+  if (!recommendationDetails) {
+    return (
+      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Chargement des recommendations</p>
+        <span className="loader  " />
+      </div>
+    );
   }
 
   return (
@@ -70,7 +100,7 @@ export default function AlbumTitreDetails({ token }) {
               <h3 className="font-bold text-white/70 mt-5 text-sm md:mb-1 md:text-xl ">
                 Album
               </h3>
-              <h2 className="font-bold mt-2 text-base mb-1 text-white md:text-3xl md:mb-5">
+              <h2 className="card-light-second font-bold mt-2 text-base mb-1 text-white md:text-3xl md:mb-5">
                 {albumTitreDetails.name}
               </h2>
               <h3>{albumTitreDetails.id.name}</h3>
@@ -92,7 +122,7 @@ export default function AlbumTitreDetails({ token }) {
                   src={artisteDetail.images[0].url}
                   alt={artisteDetail.name}
                 />
-                <p className="text-sm  md:text-lg  ">
+                <p className="  text-sm  md:text-lg  ">
                   {albumTitreDetails.artists[0].name}
                 </p>
               </div>
@@ -105,19 +135,24 @@ export default function AlbumTitreDetails({ token }) {
             <Link to={`/search/title/${item.id}`}>
               <div className="flex justify-between mt-1">
                 <p className="  text-sm md:text-lg md:ml-8 " key={item.id}>
-                  {item.track_number} {item.name}{" "}
+                  {item.track_number} {" . "} {item.name}
                 </p>
+
                 <p className=" text-sm md:text-lg md:mr-24">
                   {convertNumberMsEnMin(item.duration_ms)}
                 </p>
               </div>
             </Link>
           ))}
-          <p className="mt-8 text-base md:text-2xl md:mt-12">
-            Vous devriez aussi aimer
-          </p>
         </div>
       </figure>
+      {recommendationDetails !== "" && (
+        <CardListTitres
+          dataAlbums={recommendationDetails.tracks}
+          title="Vous devriez aimer"
+        />
+      )}
+
       <div className=" mb-16 sm:hidden" />
     </div>
   );

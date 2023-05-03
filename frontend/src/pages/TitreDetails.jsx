@@ -72,22 +72,42 @@ export default function TitreDetails({ token }) {
   }, [id]);
 
   if (!titreDetails) {
-    return <p>Chargement titre</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Chargement titre</p>
+        <span className="loader  " />
+      </div>
+    );
   }
   if (!artisteDetail) {
-    return <p>Chargement artiste</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20  md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Loading artiste</p>
+        <span className="loader  " />
+      </div>
+    );
   }
   if (!albumDetails) {
-    return <p>Chargement album</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Loading album</p>
+        <span className="loader  " />
+      </div>
+    );
   }
   if (!recommendationDetails) {
-    return <p>Chargement des recommendations</p>;
+    return (
+      <div className="flex  flex-col items-center mt-20  md:ml-36 md:mt-2">
+        <p className=" mb-20 ">Chargement des recommendations</p>
+        <span className="loader  " />
+      </div>
+    );
   }
 
   return (
     <main>
-      <figure className="flex flex-col mr-4 ml-4 my-5 pb-5 bg-pink-900/20 md:justify-center md:py-12 md:my-12 md:ml-60 lg:ml-80 md:mr-14  ">
-        <div className="  md:bg-pink-600/20 p-8  md:ml-20 md:mr-20 lg:flex lg:gap-8 lg:justify-around">
+      <figure className="card-light  flex flex-col mr-4 ml-4 my-5 pb-5 bg-pink-900/20 md:justify-center md:py-12 md:my-12 md:ml-60 lg:ml-80 md:mr-14  ">
+        <div className=" card-light-second md:bg-pink-600/20 p-8  md:ml-20 md:mr-20 lg:flex lg:gap-8 lg:justify-around">
           <div className="flex justify-center items-center">
             <img
               className=" w-10/12 sm:w-7/12 md:w-auto md:h-auto lg:w-52 lg:h-auto lg:items-center"
@@ -97,10 +117,10 @@ export default function TitreDetails({ token }) {
           </div>
           <div>
             <figcaption className="flex flex-col  md:flex-col lg:ml-0 ">
-              <h3 className="font-bold text-white/70 mt-5 text-sm md:mb-1 md:text-xl ">
+              <h3 className="card-light-second font-bold text-white/70 mt-5 text-sm md:mb-1 md:text-xl ">
                 Titre
               </h3>
-              <h2 className="font-bold mt-2 text-base mb-1 text-white md:text-3xl md:mb-5">
+              <h2 className="card-light-second font-bold mt-2 text-base mb-1 text-white md:text-3xl md:mb-5">
                 {titreDetails.name}
               </h2>
               <p>{convertNumberMsEnMin(titreDetails.duration_ms)}</p>
@@ -117,11 +137,11 @@ export default function TitreDetails({ token }) {
                   alt={titreDetails.artists[0].name}
                 />
                 <div>
-                  <p className="text-sm  md:text-lg p-2 rounded-md ">
+                  <p className="card-light-second text-sm  md:text-lg p-2 rounded-md ">
                     {titreDetails.artists[0].name}
                   </p>{" "}
                   <Link to={`/search/album/${titreDetails.album.id}`}>
-                    <p className=" text-base p-2 rounded-md">
+                    <p className="card-light-second text-base p-2 rounded-md">
                       {titreDetails.album.name} /{" "}
                       {titreDetails.album.release_date.slice(0, 4)}
                     </p>
