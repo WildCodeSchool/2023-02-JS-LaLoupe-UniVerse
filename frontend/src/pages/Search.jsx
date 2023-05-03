@@ -37,14 +37,14 @@ export default function Search({ token }) {
   }, [searchInput]);
 
   return (
-    <>
+    <main className="mb:absolute">
       <SearchBar query={searchInput} setQuery={setSearchInput} />
       <SearchNavBar />
       <Outlet
         context={{ searchResultArtist, searchResultTracks, searchResultAlbum }}
       />
       <div className=" mb-16 sm:hidden" />
-    </>
+    </main>
   );
 }
 

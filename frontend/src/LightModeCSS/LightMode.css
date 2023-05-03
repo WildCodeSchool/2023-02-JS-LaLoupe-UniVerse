@@ -19,7 +19,7 @@
 body.light {
   /* background-image: linear-gradient(315deg, #d28be4 5%, #b6a5e9 95%); */
   background-image: linear-gradient(135deg, #fefeef 62%, #ffffff 88%);
-  color: black;
+  color: white;
 }
 
 .light nav div {
@@ -60,11 +60,15 @@ body.light {
 }
 
 .light .card-light-item {
-  background-color: rgb(203, 140, 233);
+  background-color: var(--background-card-second);
+}
+
+.light .card-light-item:hover {
+  background-color: var(--background-card-first);
 }
 
 .light .card-light-second {
-  background-color: var(--background-card-second);
+  background-color: var(--background-card-item);
 }
 /*button Slider*/
 .light .slider {
