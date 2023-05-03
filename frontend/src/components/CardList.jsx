@@ -25,7 +25,7 @@ export default function CardList({ dataAlbums, title, id }) {
   }, [id]);
 
   return (
-    <div className=" relative md:ml-[180px] lg:ml-[236px] mt-2 md:pr-5 md:pl-5 md:mr-3 mx-3">
+    <div className=" relative md:ml-[180px] lg:ml-[236px] mt-2 md:pr-5 md:pl-5 ">
       <h1 className="mb-4  text sm:text-xl md:text-2xl">{title}</h1>
       <div>
         <div

@@ -90,6 +90,14 @@ function App() {
             <Route path="album" element={<SearchAlbum />} />
             <Route path="title" element={<SearchTitle />} />
           </Route>
+          <Route
+            path="*"
+            element={
+              <h2 className="text-center text-4xl text-white pt-60">
+                Page Not Found
+              </h2>
+            }
+          />
         </Routes>
         <NavBar />
         <Footer />

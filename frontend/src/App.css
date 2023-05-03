@@ -17,6 +17,7 @@ body {
 ::-webkit-scrollbar {
   background: transparent;
   height: 10px;
+  width: 0;
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
@@ -75,10 +76,6 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  ::-webkit-scrollbar-thumb:horizontal {
-    display: block;
-  }
-
   .footer {
     display: block;
   }

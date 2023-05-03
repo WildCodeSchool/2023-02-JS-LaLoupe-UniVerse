@@ -37,7 +37,7 @@ export default function Search({ token }) {
   }, [searchInput]);
 
   return (
-    <main className="mb:absolute">
+    <main>
       <SearchBar query={searchInput} setQuery={setSearchInput} />
       <SearchNavBar />
       <Outlet
