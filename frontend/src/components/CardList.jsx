@@ -1,9 +1,9 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import CardAlbumTitre from "./CardAlbumTitre";
 import arrow from "../assets/FlecheIcons/chevron.png";
 
-export default function CardList({ dataAlbums, title }) {
+export default function CardList({ dataAlbums, title, id }) {
   const sliderListRef = useRef();
 
   function scrollLeft() {
@@ -15,8 +15,17 @@ export default function CardList({ dataAlbums, title }) {
     const width = sliderListRef.current.childNodes[0].offsetWidth;
     sliderListRef.current.scrollBy(width * 4 + 12, 0);
   }
+
+  useEffect(() => {
+    scrollLeft();
+    scrollLeft();
+    scrollLeft();
+    scrollLeft();
+    scrollLeft();
+  }, [id]);
+
   return (
-    <div className=" relative md:ml-[236px] mt-2 md:pr-5 md:pl-5 md:mr-3 mx-3">
+    <div className=" relative md:ml-[180px] lg:ml-[236px] mt-2 md:pr-5 md:pl-5 md:mr-3 mx-3">
       <h1 className="mb-4  text sm:text-xl md:text-2xl">{title}</h1>
       <div>
         <div
@@ -49,4 +58,5 @@ export default function CardList({ dataAlbums, title }) {
 CardList.propTypes = {
   dataAlbums: PropTypes.arrayOf(PropTypes.string).isRequired,
   title: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };

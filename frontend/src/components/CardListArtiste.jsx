@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import CardArtiste from "./CardArtiste";
 import arrow from "../assets/FlecheIcons/chevron.png";
 
-export default function CardListArtiste({ dataArtist, title }) {
+export default function CardListArtiste({ dataArtist, title, id }) {
   const sliderRef = useRef();
   function scrollLeft() {
     const width = sliderRef.current.childNodes[0].offsetWidth;
@@ -14,8 +14,16 @@ export default function CardListArtiste({ dataArtist, title }) {
     const width = sliderRef.current.childNodes[0].offsetWidth;
     sliderRef.current.scrollBy(width * 4 + 12, 0);
   }
+  useEffect(() => {
+    scrollLeft();
+    scrollLeft();
+    scrollLeft();
+    scrollLeft();
+    scrollLeft();
+  }, [id]);
+
   return (
-    <div className="mx-3 flex-col relative md:ml-[236px] mt-2 mb-1 md:pr-5 md:pl-5  ">
+    <div className="mx-3 flex-col relative md:ml-[180px] lg:ml-[236px] mt-2 mb-1 md:pr-5 md:pl-5  ">
       <h1 className=" mb-4 text sm:text-xl md:text-2xl">{title}</h1>
       <div>
         <div
@@ -49,4 +57,5 @@ CardListArtiste.propTypes = {
   dataArtist: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
     .isRequired,
   title: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
