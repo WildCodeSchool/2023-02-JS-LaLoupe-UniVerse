@@ -26,7 +26,7 @@ export default function CardListGenre({ id }) {
   }, [id]);
 
   return (
-    <div className="relative  md:ml-[180px] lg:ml-[236px] md:pr-5 md:pl-5  md:mr-3 mx-3">
+    <div className="relative  md:ml-[180px] lg:ml-[236px] md:pr-5 md:pl-5">
       <h1 className="mb-4 text sm:text-xl md:text-2xl">Genres</h1>
       <div
         ref={sliderGenreRef}
