@@ -67,6 +67,7 @@ export default function TitreDetails({ token }) {
   useEffect(() => {
     if (token !== "") {
       getOneTitle();
+      window.scroll(0, 0);
     }
   }, [id]);
 
@@ -85,17 +86,17 @@ export default function TitreDetails({ token }) {
 
   return (
     <main>
-      <figure className="flex flex-col mr-4 ml-4 my-5 pb-5 bg-pink-900/20 md:justify-center md:py-12 md:my-12 md:ml-80 md:mr-14  ">
-        <div className="  md:bg-pink-600/20 p-8 md:flex md:ml-20 md:mr-20 md:h-80">
-          <div className="flex md:w-60 justify-center md:justify-start">
+      <figure className="flex flex-col mr-4 ml-4 my-5 pb-5 bg-pink-900/20 md:justify-center md:py-12 md:my-12 md:ml-60 lg:ml-80 md:mr-14  ">
+        <div className="  md:bg-pink-600/20 p-8  md:ml-20 md:mr-20 lg:flex lg:gap-8 lg:justify-around">
+          <div className="flex justify-center items-center">
             <img
-              className=" w-46 h-46 md:w-64 md:h-64"
+              className=" w-10/12 sm:w-7/12 md:w-auto md:h-auto lg:w-52 lg:h-auto lg:items-center"
               src={titreDetails.album.images[0].url}
               alt={titreDetails.name}
             />
           </div>
           <div>
-            <figcaption className="flex flex-col md:ml-14  md:flex-col ">
+            <figcaption className="flex flex-col  md:flex-col lg:ml-0 ">
               <h3 className="font-bold text-white/70 mt-5 text-sm md:mb-1 md:text-xl ">
                 Titre
               </h3>
@@ -105,7 +106,7 @@ export default function TitreDetails({ token }) {
               <p>{convertNumberMsEnMin(titreDetails.duration_ms)}</p>
             </figcaption>
             <Link to={`/search/artist/${artisteDetail.id}`}>
-              <div className="flex items-center font-bold text-base mt-4 md:mt-9 text-white/70 md:text-xl md:ml-12 md:justify-start">
+              <div className="flex items-center font-bold text-base mt-4 md:mt-9 text-white/70 md:text-xl md:justify-start">
                 <img
                   className="rounded-full w-16 h-16 md:w-16 md:h-16 mr-4"
                   src={
@@ -152,6 +153,7 @@ export default function TitreDetails({ token }) {
         <CardListTitres
           dataAlbums={recommendationDetails.tracks}
           title="Vous devriez aimer"
+          id={id}
         />
       )}
 

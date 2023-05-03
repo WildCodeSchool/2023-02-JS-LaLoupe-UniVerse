@@ -5,7 +5,7 @@ export default function SearchTitle() {
   const { searchResultTracks } = useOutletContext();
 
   return (
-    <div className="flex justify-evenly flex-wrap md:ml-[236px] my-10 md:mr-3 mx-3 gap-3">
+    <div className="flex justify-evenly flex-wrap md:ml-[180px] lg:ml-[236px] my-10 md:mr-3 mx-3 gap-3">
       {searchResultTracks.map((track) => (
         <CardTitre
           key={track.id}
