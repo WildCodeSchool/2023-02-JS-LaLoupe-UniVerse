@@ -47,6 +47,10 @@ export default function CardListGenre({ id }) {
   );
 }
 
+CardListGenre.defaultProps = {
+  id: "",
+};
+
 CardListGenre.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 };

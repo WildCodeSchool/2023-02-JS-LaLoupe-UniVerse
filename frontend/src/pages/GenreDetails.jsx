@@ -157,7 +157,11 @@ export default function GenreDetails({ token, className }) {
               className="flex gap-3 overflow-x-auto "
             >
               {tracks.tracks.slice(30, 50).map((track) => (
-                <ArtistImage id={track.artists[0].id} token={token} />
+                <ArtistImage
+                  id={track.artists[0].id}
+                  token={token}
+                  key={`genres${track.id}`}
+                />
               ))}
               <button
                 className="precedent"

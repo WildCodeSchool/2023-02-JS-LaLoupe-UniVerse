@@ -63,9 +63,13 @@ export default function CardListTitres({ dataAlbums, title, id }) {
   );
 }
 
+CardListTitres.defaultProps = {
+  id: "",
+};
+
 CardListTitres.propTypes = {
   dataAlbums: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
     .isRequired,
   title: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 };
