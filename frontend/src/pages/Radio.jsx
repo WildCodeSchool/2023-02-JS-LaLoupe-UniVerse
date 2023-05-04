@@ -47,7 +47,7 @@ export default function Radio() {
   return (
     <div>
       <SearchBar query={searchInput} setQuery={setSearchInput} />
-      <div className="flex justify-evenly flex-wrap md:ml-[180px] lg:ml-[236px] md:mr-3 mx-3 gap-3">
+      <div className="flex justify-evenly flex-wrap md:ml-[180px] lg:ml-[236px] sm:my-10 md:mr-3 mx-3 gap-3">
         {radios.map((radio) => (
           <div
             key={radio.stationuuid}

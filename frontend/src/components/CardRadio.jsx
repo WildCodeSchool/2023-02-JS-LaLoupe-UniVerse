@@ -6,6 +6,7 @@ import pauseIcon from "../assets/pause.png";
 
 export default function CardRadio({ favicon, name, country, url }) {
   const [playRadio, setPlayRadio] = useState(false);
+
   const audioRef = useRef();
 
   const handlePlayRadio = () => {
