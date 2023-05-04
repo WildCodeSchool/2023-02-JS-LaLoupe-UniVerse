@@ -74,7 +74,7 @@ export default function TitreDetails({ token }) {
   if (!titreDetails) {
     return (
       <div className="min-h-screen flex flex-col items-center mt-20 md:ml-36 md:mt-2">
-        <p className="md:text-xl mb-20 ">Chargement titre</p>
+        <p className="md:text-xl mb-20 ">Chargement des titres...</p>
         <span className="loader  " />
       </div>
     );
@@ -82,7 +82,7 @@ export default function TitreDetails({ token }) {
   if (!artisteDetail) {
     return (
       <div className="min-h-screen flex flex-col items-center mt-20  md:ml-36 md:mt-2">
-        <p className="md:text-xl mb-20 ">Loading artiste</p>
+        <p className="md:text-xl mb-20 ">Chargement des titres...</p>
         <span className="loader  " />
       </div>
     );
@@ -90,7 +90,7 @@ export default function TitreDetails({ token }) {
   if (!albumDetails) {
     return (
       <div className="min-h-screen flex flex-col items-center mt-20 md:ml-36 md:mt-2">
-        <p className="md:text-xl mb-20 ">Loading album</p>
+        <p className="md:text-xl mb-20 ">Chargement des albums...</p>
         <span className="loader  " />
       </div>
     );
@@ -98,7 +98,7 @@ export default function TitreDetails({ token }) {
   if (!recommendationDetails) {
     return (
       <div className="min-h-screen flex flex-col items-center mt-20  md:ml-36 md:mt-2">
-        <p className=" md:text-xl mb-20 ">Chargement des recommendations</p>
+        <p className=" md:text-xl mb-20 ">Chargement des recommendations...</p>
         <span className="loader  " />
       </div>
     );
