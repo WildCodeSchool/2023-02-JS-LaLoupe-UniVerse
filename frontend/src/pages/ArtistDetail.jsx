@@ -96,7 +96,7 @@ export default function ArtistDetail({ token }) {
 
   if (!artist) {
     return (
-      <div className="flex  flex-col items-center mt-20  md:ml-36 md:mt-2">
+      <div className="min-h-screen flex flex-col items-center mt-20  md:ml-36 md:mt-2">
         <p className=" mb-20 ">Loading artist</p>
         <span className="loader  " />
       </div>
@@ -105,8 +105,8 @@ export default function ArtistDetail({ token }) {
 
   if (!tracks) {
     return (
-      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
-        <p className=" mb-20 ">Loading tracks</p>
+      <div className="min-h-screen flex flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className="md:text-xl mb-20 ">Loading tracks</p>
         <span className="loader  " />
       </div>
     );
@@ -114,8 +114,8 @@ export default function ArtistDetail({ token }) {
 
   if (!album) {
     return (
-      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
-        <p className=" mb-20 ">Loading album</p>
+      <div className="min-h-screen flex flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className="md:text-xl mb-20 ">Loading album</p>
         <span className="loader  " />
       </div>
     );
@@ -123,8 +123,8 @@ export default function ArtistDetail({ token }) {
 
   if (!relatedArtist) {
     return (
-      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
-        <p className=" mb-20 ">Loading arelated artist</p>
+      <div className="min-h-screen flex flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className="md:text-xl mb-20 ">Loading related artist</p>
         <span className="loader  " />
       </div>
     );
@@ -132,8 +132,8 @@ export default function ArtistDetail({ token }) {
 
   return (
     <div>
-      <figure className="card-light flex flex-col mr-4 ml-4 my-5 pb-5 bg-pink-900/20 md:justify-center md:py-12 md:my-12 md:ml-60 lg:ml-80 md:mr-14  ">
-        <div className=" card-light-second md:bg-pink-600/20 p-8  md:ml-20 md:mr-20 lg:flex lg:gap-8 lg:justify-around">
+      <figure className="card-light rounded-lg  flex flex-col mr-4 ml-4 my-5 pb-5 bg-pink-900/20 md:justify-center md:py-12 md:my-12 md:ml-60 lg:ml-80 md:mr-14  ">
+        <div className=" card-light-second rounded-lg  md:bg-pink-600/20 p-8  md:ml-20 md:mr-20 lg:flex lg:gap-8 lg:justify-around">
           <div className="flex justify-center items-center">
             <img
               className=" w-10/12 sm:w-7/12 md:w-auto md:h-auto lg:w-52 lg:h-auto lg:items-center "
@@ -155,14 +155,19 @@ export default function ArtistDetail({ token }) {
         </div>
 
         <div className="flexflex-col ml-6 mr-6 justify-center md:ml-20 md:mt-10 ">
-          <h2 className="mt-6 ml-8 text-2xl mb-5">Ses plus grands Hits</h2>
+          <h2 className="titleTracks text-2xl mb-5 md:mb-10">
+            Ses plus grands Hits
+          </h2>
           {tracks.tracks.map((item) => (
             <Link to={`/search/title/${item.id}`}>
               <div className="flex justify-between mt-1">
-                <p className="  text-sm md:text-lg md:ml-8 " key={item.id}>
+                <p
+                  className=" titleTracks text-sm md:text-lg md:ml-8 "
+                  key={item.id}
+                >
                   {item.name}{" "}
                 </p>
-                <p className=" text-sm md:text-lg md:mr-24">
+                <p className="titleTracks text-sm md:text-lg md:mr-24">
                   {convertNumberMsEnMin(item.duration_ms)}
                 </p>
               </div>
