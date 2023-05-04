@@ -155,7 +155,7 @@ export default function AlbumTitreDetails({ token }) {
         />
       )}
 
-      <div className=" mb-16 sm:hidden" />
+      <div className=" mb-16 md:hidden" />
     </div>
   );
 }

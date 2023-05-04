@@ -47,11 +47,11 @@ export default function Radio() {
   return (
     <div>
       <SearchBar query={searchInput} setQuery={setSearchInput} />
-      <div className="flex justify-evenly flex-wrap md:ml-[180px] lg:ml-[236px] my-10 md:mr-3 mx-3 gap-3">
+      <div className="flex justify-evenly flex-wrap md:ml-[180px] lg:ml-[236px] md:mr-3 mx-3 gap-3">
         {radios.map((radio) => (
           <div
             key={radio.stationuuid}
-            className=" card-title bg-neutral-900 hover:bg-pink-600/30 duration-150 h-36 rounded-md flex-none m-0 py-1 pb-1 px-2 w-28 sm:h-56 sm:w-44 md:h-64 md:w-56"
+            className=" card-title bg-neutral-900 hover:bg-pink-600/30 duration-150 h-36 rounded-md m-0 py-1 pb-1 px-2 w-36 sm:h-56 sm:w-44 md:h-64 md:w-56"
           >
             <CardRadio
               favicon={radio.favicon ? radio.favicon : null}
@@ -62,6 +62,7 @@ export default function Radio() {
           </div>
         ))}
       </div>
+      <div className=" mb-16 md:hidden" />
     </div>
   );
 }

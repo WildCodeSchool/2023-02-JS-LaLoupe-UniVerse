@@ -22,35 +22,39 @@ export default function CardRadio({ favicon, name, country, url }) {
     <div>
       <figure>
         {favicon ? (
-          <div className="h-40 flex items-center mb-5">
+          <div className="sm:h-40 flex mb-1 md:mb-5">
             <img
               src={favicon}
               alt={name}
-              className="rounded-md md:w-40 m-auto sm:py-2 md:py-0 md:rounded-md sm:w-36  "
+              className="rounded-md md:w-40 mx-auto md:py-0 md:rounded-md sm:w-32 w-24 h-24 sm:h-32 md:h-auto"
             />
           </div>
         ) : (
-          <div className="h-40 flex items-center mb-5">
+          <div className="sm:h-40 flex mb-1 md:mb-5">
             <img
               src={imgRadio}
               alt="radio-par-defaut"
-              className="rounded-md md:w-40 m-auto sm:py-2 md:py-0 md:rounded-md sm:w-36  "
+              className="rounded-md md:w-40 mx-auto md:py-0 md:rounded-md sm:w-32 w-24 h-24 sm:h-auto "
             />
           </div>
         )}
-        <figcaption className="text-center text-white/60 space-y-0.5 flex justify-between items-center">
-          <div className="w-8/12 text-start px-2">
-            <h2 className="font-bold text-xs/4 text-white/70 sm:text-base md:text-base truncate">
+        <figcaption className="text-center text-white/60 md:space-y-0.5 flex justify-between items-start sm:items-center ">
+          <div className="w-8/12 text-start sm:px-2 truncate">
+            <h2 className="font-bold text-white/70 text-xs sm:text-base truncate">
               {name}
             </h2>
-            <p className="text-[8px] sm:text-xs">{country}</p>
+            <p className="text-[8px] text-xs truncate">{country}</p>
           </div>
           <div>
             <button type="button" onClick={handlePlayRadio}>
               {playRadio === false ? (
-                <img src={playIcon} alt="play" className="w-16" />
+                <img src={playIcon} alt="play" className=" w-10 sm:w-16 mb-2" />
               ) : (
-                <img src={pauseIcon} alt="pause" className="w-16" />
+                <img
+                  src={pauseIcon}
+                  alt="pause"
+                  className="w-10 sm:w-16 mb-2"
+                />
               )}
             </button>
           </div>

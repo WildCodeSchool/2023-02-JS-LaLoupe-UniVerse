@@ -184,6 +184,7 @@ export default function ArtistDetail({ token }) {
           id={id}
         />
       </section>
+      <div className=" mb-16 md:hidden" />
     </div>
   );
 }
