@@ -105,9 +105,11 @@ function App() {
           <Route
             path="*"
             element={
-              <h2 className="text-center text-4xl text-white pt-60">
-                Cette page n'existe pas...
-              </h2>
+              <div className="min-h-screen flex  flex-col items-center mt-20  md:ml-36 md:mt-2">
+                <h2 className="text-center text-4xl text-white pt-60">
+                  Cette page n'existe pas...
+                </h2>
+              </div>
             }
           />
         </Routes>
