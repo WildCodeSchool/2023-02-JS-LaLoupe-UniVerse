@@ -65,8 +65,12 @@ export default function CardRadio({ favicon, name, country, url }) {
   );
 }
 
+CardRadio.defaultProps = {
+  favicon: "",
+};
+
 CardRadio.propTypes = {
-  favicon: PropTypes.string.isRequired,
+  favicon: PropTypes.string,
   name: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
