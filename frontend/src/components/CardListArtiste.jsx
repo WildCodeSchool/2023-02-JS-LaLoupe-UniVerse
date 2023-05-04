@@ -24,7 +24,7 @@ export default function CardListArtiste({ dataArtist, title, id }) {
 
   return (
     <div className=" flex-col relative md:ml-[180px] lg:ml-[236px] mt-2 mb-1 md:pr-5 md:pl-5  ">
-      <h1 className=" mb-4 text sm:text-xl md:text-2xl">{title}</h1>
+      <h1 className=" mb-4 text sm:text-xl md:text-2xl font-bold">{title}</h1>
       <div>
         <div
           ref={sliderRef}
@@ -53,9 +53,13 @@ export default function CardListArtiste({ dataArtist, title, id }) {
   );
 }
 
+CardListArtiste.defaultProps = {
+  id: "",
+};
+
 CardListArtiste.propTypes = {
   dataArtist: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
     .isRequired,
   title: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 };

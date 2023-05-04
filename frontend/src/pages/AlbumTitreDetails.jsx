@@ -135,7 +135,7 @@ export default function AlbumTitreDetails({ token }) {
               <div className="flex justify-between mt-1">
                 <p
                   className="titleTracks text-sm md:text-lg md:ml-8 "
-                  key={item.id}
+                  key={`albumsTitres${item.id}`}
                 >
                   {item.track_number} {" . "} {item.name}
                 </p>

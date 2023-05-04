@@ -163,9 +163,9 @@ export default function ArtistDetail({ token }) {
               <div className="flex justify-between mt-1">
                 <p
                   className=" titleTracks text-sm md:text-lg md:ml-8 "
-                  key={item.id}
+                  key={`artistes${item.id}`}
                 >
-                  {item.name}{" "}
+                  {item.name}
                 </p>
                 <p className="titleTracks text-sm md:text-lg md:mr-24">
                   {convertNumberMsEnMin(item.duration_ms)}

@@ -42,7 +42,7 @@ const NavBar = () => {
             </div>
           )}
         </NavLink>
-        <NavLink to="/searchrtbgd">
+        <NavLink to="/radio">
           {({ isActive }) => (
             <div
               className={

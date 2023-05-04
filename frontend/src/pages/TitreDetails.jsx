@@ -160,7 +160,7 @@ export default function TitreDetails({ token }) {
           {albumDetails.tracks.items.map((track) => (
             <Link to={`/search/title/${track.id}`}>
               <div
-                key={track.id}
+                key={`titres${track.id}`}
                 className="flex justify-between mt-1 md:mx-24 mx-6"
               >
                 <p className=" titleTracks text-sm md:text-lg ">{track.name}</p>

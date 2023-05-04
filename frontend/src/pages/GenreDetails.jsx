@@ -78,13 +78,13 @@ export default function GenreDetails({ token, className }) {
     : "card-genre bg-neutral-900 hover:bg-pink-600/30 duration-150 h-36 rounded-md flex-none m-0 py-1 pb-1 px-2 w-28 sm:h-56 sm:w-44 md:h-64 md:w-56";
 
   return (
-    <main>
+    <main className="mt-5">
       <section className="sm:flex sm:justify-center md:ml-[236px] mb-6 md:pl-5">
         <div className="sm:grid sm:grid-cols-2 mr-3 sm:gap-2 flex justify-center flex-wrap md:pr-5 md:pl-5">
           {tracks.tracks.slice(0, 10).map((track) => (
             <Link
-              to={`/search/title/${id}`}
-              className=" flex gap-4 bg-neutral-900 rounded-lg hover:bg-pink-600/30 mb-2 sm:mb-0 w-10/12 sm:w-full h-20"
+              to={`/search/title/${track.id}`}
+              className="flex gap-4 bg-neutral-900 rounded-lg hover:bg-pink-600/30 mb-2 sm:mb-0 w-10/12 sm:w-full h-20"
             >
               <figure className="card-title flex w-full">
                 <img
@@ -122,7 +122,7 @@ export default function GenreDetails({ token, className }) {
           className="flex gap-3 overflow-x-auto"
         >
           {tracks.tracks.slice(10, 30).map((track) => (
-            <Link to={`/search/album/${id}`}>
+            <Link to={`/search/album/${track.album.id}`}>
               <figure className={classes}>
                 <img
                   className="rounded-md md:w-48 m-auto sm:py-2 md:py-0 md:rounded-md sm:w-36"
@@ -162,7 +162,11 @@ export default function GenreDetails({ token, className }) {
               className="flex gap-3 overflow-x-auto "
             >
               {tracks.tracks.slice(30, 50).map((track) => (
-                <ArtistImage id={track.artists[0].id} token={token} />
+                <ArtistImage
+                  id={track.artists[0].id}
+                  token={token}
+                  key={`genres${track.id}`}
+                />
               ))}
               <button
                 className="precedent"
@@ -178,6 +182,7 @@ export default function GenreDetails({ token, className }) {
           </div>
         </div>
       </section>
+      <div className=" mb-16 sm:hidden" />
     </main>
   );
 }
