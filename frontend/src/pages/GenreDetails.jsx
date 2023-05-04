@@ -79,21 +79,21 @@ export default function GenreDetails({ token, className }) {
 
   return (
     <main className="mt-5">
-      <section className="sm:flex sm:justify-center md:ml-[236px] mb-6 md:pl-5">
+      <section className="sm:flex sm:justify-center md:ml-[236px] mb-2 md:pl-5">
         <div className="sm:grid sm:grid-cols-2 mr-3 sm:gap-2 flex justify-center flex-wrap md:pr-5 md:pl-5">
           {tracks.tracks.slice(0, 10).map((track) => (
             <Link
               to={`/search/title/${track.id}`}
               className="flex gap-4 bg-neutral-900 rounded-lg hover:bg-pink-600/30 mb-2 sm:mb-0 w-10/12 sm:w-full h-20"
             >
-              <figure className="card-title flex w-full">
+              <figure className="card-title rounded-md flex w-full">
                 <img
                   src={track.album.images[0].url}
                   alt={track.name}
                   className="rounded-l-lg"
                 />
                 <div className="flex justify-between w-full mr-1 relative">
-                  <figcaption className="flex flex-col justify-evenly ml-1 w-8/12 overflow-x-hidden">
+                  <figcaption className=" flex flex-col justify-evenly ml-1 w-8/12 overflow-x-hidden">
                     <h2 className="font-bold text-xs/4 text-white/70 sm:text-base md:text-base truncate">
                       {track.name}
                     </h2>
@@ -114,8 +114,8 @@ export default function GenreDetails({ token, className }) {
         </div>
       </section>
 
-      <div className=" relative md:ml-[236px] mt-2 md:pr-5 md:pl-5 md:mr-3 mx-3">
-        <h1 className="md:mb-3  text sm:text-xl md:text-2xl">Albums</h1>
+      <div className=" relative mt-1 md:ml-[236px] sm:-mt-2 md:pr-5 md:pl-5 md:mr-3 mx-3">
+        <h1 className="mb-2 text sm:text-xl md:text-2xl">Albums</h1>
         <div
           ref={sliderListRef}
           id="sliderList"
@@ -153,8 +153,8 @@ export default function GenreDetails({ token, className }) {
       </div>
 
       <section>
-        <div className="mx-3 flex-col relative md:ml-[236px] mt-2 mb-1 md:pr-5 md:pl-5  ">
-          <h1 className=" mb-4 text sm:text-xl md:text-2xl">Artistes</h1>
+        <div className="mx-3 flex-col relative md:ml-[236px] md:pr-5 md:pl-5  ">
+          <h1 className=" mb-2 text sm:text-xl md:text-2xl">Artistes</h1>
           <div>
             <div
               ref={sliderRef}
