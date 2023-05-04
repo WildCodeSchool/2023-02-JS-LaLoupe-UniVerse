@@ -18,7 +18,6 @@ import SearchTitle from "./pages/SearchTitle";
 import ArtistDetail from "./pages/ArtistDetail";
 import AlbumTitreDetails from "./pages/AlbumTitreDetails";
 import TitreDetails from "./pages/TitreDetails";
-import GenreDetails from "./pages/GenreDetails";
 
 export const TokenContext = createContext("");
 
@@ -83,10 +82,6 @@ function App() {
           <Route
             path="search/title/:id"
             element={<TitreDetails token={accessToken} />}
-          />
-          <Route
-            path="search/genre/:genre"
-            element={<GenreDetails token={accessToken} />}
           />
           <Route path="search" element={<Search token={accessToken} />}>
             <Route index element={<SearchAll />} />
