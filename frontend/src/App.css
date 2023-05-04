@@ -24,6 +24,10 @@ body {
   display: none;
 }
 
+.svgHover:hover {
+  stroke: blue;
+}
+
 #radio-gradient {
   --color-stop: #c60606;
   --color-mid: #da77f2;

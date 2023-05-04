@@ -18,6 +18,8 @@ import SearchTitle from "./pages/SearchTitle";
 import ArtistDetail from "./pages/ArtistDetail";
 import AlbumTitreDetails from "./pages/AlbumTitreDetails";
 import TitreDetails from "./pages/TitreDetails";
+import Radio from "./pages/Radio";
+import GenreDetails from "./pages/GenreDetails";
 
 export const TokenContext = createContext("");
 
@@ -66,7 +68,7 @@ function App() {
 
   return (
     <TokenContext.Provider value={accessToken}>
-      <>
+      <main>
         <NavBarPc />
         <Header />
         <Routes>
@@ -83,6 +85,10 @@ function App() {
             path="search/title/:id"
             element={<TitreDetails token={accessToken} />}
           />
+          <Route
+            path="search/genre/:genre"
+            element={<GenreDetails token={accessToken} />}
+          />
           <Route path="search" element={<Search token={accessToken} />}>
             <Route index element={<SearchAll />} />
 
@@ -90,6 +96,7 @@ function App() {
             <Route path="album" element={<SearchAlbum />} />
             <Route path="title" element={<SearchTitle />} />
           </Route>
+          <Route path="radio" element={<Radio />} />
           <Route
             path="*"
             element={
@@ -101,7 +108,7 @@ function App() {
         </Routes>
         <NavBar />
         <Footer />
-      </>
+      </main>
     </TokenContext.Provider>
   );
 }
