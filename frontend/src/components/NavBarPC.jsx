@@ -48,7 +48,7 @@ const NavBar = () => {
             </div>
           )}
         </NavLink>
-        <NavLink to="/search">
+        <NavLink to="/radio">
           {({ isActive }) => (
             <div
               className={
