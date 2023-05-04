@@ -97,7 +97,7 @@ export default function ArtistDetail({ token }) {
   if (!artist) {
     return (
       <div className="min-h-screen flex flex-col items-center mt-20  md:ml-36 md:mt-2">
-        <p className=" mb-20 ">Loading artist</p>
+        <p className=" mb-20 ">Chargement des artistes...</p>
         <span className="loader  " />
       </div>
     );
@@ -106,7 +106,7 @@ export default function ArtistDetail({ token }) {
   if (!tracks) {
     return (
       <div className="min-h-screen flex flex-col items-center mt-20 md:ml-36 md:mt-2">
-        <p className="md:text-xl mb-20 ">Loading tracks</p>
+        <p className="md:text-xl mb-20 ">Chargement des titres...</p>
         <span className="loader  " />
       </div>
     );
@@ -115,7 +115,7 @@ export default function ArtistDetail({ token }) {
   if (!album) {
     return (
       <div className="min-h-screen flex flex-col items-center mt-20 md:ml-36 md:mt-2">
-        <p className="md:text-xl mb-20 ">Loading album</p>
+        <p className="md:text-xl mb-20 ">Chargement des albums...</p>
         <span className="loader  " />
       </div>
     );
@@ -124,7 +124,7 @@ export default function ArtistDetail({ token }) {
   if (!relatedArtist) {
     return (
       <div className="min-h-screen flex flex-col items-center mt-20 md:ml-36 md:mt-2">
-        <p className="md:text-xl mb-20 ">Loading related artist</p>
+        <p className="md:text-xl mb-20 ">Chargement des recommandations...</p>
         <span className="loader  " />
       </div>
     );
