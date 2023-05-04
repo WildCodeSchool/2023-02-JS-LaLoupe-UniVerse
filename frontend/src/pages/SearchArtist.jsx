@@ -4,7 +4,7 @@ import CardArtiste from "../components/CardArtiste";
 export default function SearchArtist() {
   const { searchResultArtist } = useOutletContext();
   return (
-    <div className="flex justify-evenly flex-wrap md:ml-[180px] lg:ml-[236px] my-10 md:mr-3 mx-3 gap-3">
+    <div className="min-h-screen flex justify-evenly flex-wrap md:ml-[180px] lg:ml-[236px] my-10 md:mr-3 mx-3 gap-3">
       {searchResultArtist.map((artiste) => (
         <CardArtiste
           key={artiste.id}

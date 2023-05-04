@@ -73,32 +73,32 @@ export default function TitreDetails({ token }) {
 
   if (!titreDetails) {
     return (
-      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
-        <p className=" mb-20 ">Chargement titre</p>
+      <div className="min-h-screen flex flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className="md:text-xl mb-20 ">Chargement titre</p>
         <span className="loader  " />
       </div>
     );
   }
   if (!artisteDetail) {
     return (
-      <div className="flex  flex-col items-center mt-20  md:ml-36 md:mt-2">
-        <p className=" mb-20 ">Loading artiste</p>
+      <div className="min-h-screen flex flex-col items-center mt-20  md:ml-36 md:mt-2">
+        <p className="md:text-xl mb-20 ">Loading artiste</p>
         <span className="loader  " />
       </div>
     );
   }
   if (!albumDetails) {
     return (
-      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
-        <p className=" mb-20 ">Loading album</p>
+      <div className="min-h-screen flex flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className="md:text-xl mb-20 ">Loading album</p>
         <span className="loader  " />
       </div>
     );
   }
   if (!recommendationDetails) {
     return (
-      <div className="flex  flex-col items-center mt-20  md:ml-36 md:mt-2">
-        <p className=" mb-20 ">Chargement des recommendations</p>
+      <div className="min-h-screen flex flex-col items-center mt-20  md:ml-36 md:mt-2">
+        <p className=" md:text-xl mb-20 ">Chargement des recommendations</p>
         <span className="loader  " />
       </div>
     );
@@ -106,8 +106,8 @@ export default function TitreDetails({ token }) {
 
   return (
     <main>
-      <figure className="card-light  flex flex-col mr-4 ml-4 my-5 pb-5 bg-pink-900/20 md:justify-center md:py-12 md:my-12 md:ml-60 lg:ml-80 md:mr-14  ">
-        <div className=" card-light-second md:bg-pink-600/20 p-8  md:ml-20 md:mr-20 lg:flex lg:gap-8 lg:justify-around">
+      <figure className="card-light rounded-lg  flex flex-col mr-4 ml-4 my-5 pb-5 bg-pink-900/20 md:justify-center md:py-12 md:my-12 md:ml-60 lg:ml-80 md:mr-14  ">
+        <div className=" card-light-second rounded-lg  md:bg-pink-600/20 p-8  md:ml-20 md:mr-20 lg:flex lg:gap-8 lg:justify-around">
           <div className="flex justify-center items-center">
             <img
               className=" w-10/12 sm:w-7/12 md:w-auto md:h-auto lg:w-52 lg:h-auto lg:items-center"
@@ -123,7 +123,9 @@ export default function TitreDetails({ token }) {
               <h2 className="card-light-second font-bold mt-2 text-base mb-1 text-white md:text-3xl md:mb-5">
                 {titreDetails.name}
               </h2>
-              <p>{convertNumberMsEnMin(titreDetails.duration_ms)}</p>
+              <p className="titleTracks">
+                {convertNumberMsEnMin(titreDetails.duration_ms)}
+              </p>
             </figcaption>
             <Link to={`/search/artist/${artisteDetail.id}`}>
               <div className="flex items-center font-bold text-base mt-4 md:mt-9 text-white/70 md:text-xl md:justify-start">
@@ -137,7 +139,7 @@ export default function TitreDetails({ token }) {
                   alt={titreDetails.artists[0].name}
                 />
                 <div>
-                  <p className="card-light-second text-sm  md:text-lg p-2 rounded-md ">
+                  <p className=" card-light-second text-sm  md:text-lg p-2 rounded-md ">
                     {titreDetails.artists[0].name}
                   </p>{" "}
                   <Link to={`/search/album/${titreDetails.album.id}`}>
@@ -152,15 +154,17 @@ export default function TitreDetails({ token }) {
           </div>
         </div>
         <section>
-          <h2 className=" mx-6 md:mx-24 my-8 text-xl">Dans le même album</h2>
+          <h2 className="titleTracks mx-6 md:mx-24 my-8 text-xl">
+            Dans le même album
+          </h2>
           {albumDetails.tracks.items.map((track) => (
             <Link to={`/search/title/${track.id}`}>
               <div
                 key={track.id}
                 className="flex justify-between mt-1 md:mx-24 mx-6"
               >
-                <p className="  text-sm md:text-lg ">{track.name}</p>
-                <p className=" text-sm md:text-lg ">
+                <p className=" titleTracks text-sm md:text-lg ">{track.name}</p>
+                <p className="titleTracks text-sm md:text-lg ">
                   {convertNumberMsEnMin(track.duration_ms)}
                 </p>
               </div>
