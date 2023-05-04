@@ -20,6 +20,7 @@ import AlbumTitreDetails from "./pages/AlbumTitreDetails";
 import TitreDetails from "./pages/TitreDetails";
 import Radio from "./pages/Radio";
 import GenreDetails from "./pages/GenreDetails";
+import Video from "./components/Video";
 
 export const TokenContext = createContext("");
 
@@ -73,6 +74,10 @@ function App() {
         <Header />
         <Routes>
           <Route index element={<Home albumsArray={albums} />} />
+          <Route
+            path="search/artist/4siBlVknVhh8jtVy9jHsDG"
+            element={<Video albumsArray={albums} />}
+          />
           <Route
             path="search/artist/:id"
             element={<ArtistDetail token={accessToken} />}
