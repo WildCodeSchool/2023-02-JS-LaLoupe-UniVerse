@@ -26,7 +26,7 @@ export default function ArtistImage({ token, id }) {
   }, [id]);
 
   if (!artist) {
-    return <p>Loading artist</p>;
+    return <p>Chargement des artistes...</p>;
   }
 
   return (
