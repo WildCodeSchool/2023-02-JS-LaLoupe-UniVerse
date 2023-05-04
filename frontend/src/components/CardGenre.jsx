@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function CardGenre({ imgSrc, name }) {
   return (
     <Link to={`/search/genre/${name}`}>
-      <figure className=" flex-none bg-neutral-900 hover:bg-pink-600/30 duration-150 h-32 rounded-md py-1 pb-1 px-2 w-36 sm:h-56 sm:w-44 md:h-48 md:w-56">
+      <figure className="card-genre flex-none bg-neutral-900 hover:bg-pink-600/30 duration-150 h-32 rounded-md py-1 pb-1 px-2 w-36 sm:h-56 sm:w-44 md:h-48 md:w-56">
         <img
           className="rounded-md md:w-48 m-auto sm:py-2 md:rounded-md sm:w-36"
           src={imgSrc}

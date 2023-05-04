@@ -65,12 +65,17 @@ export default function GenreDetails({ token, className }) {
   }, [id]);
 
   if (!tracks) {
-    return <p>Loading tracks</p>;
+    return (
+      <div className="min-h-screen flex  flex-col items-center mt-20  md:ml-36 md:mt-2">
+        <p className="md:text-xl mb-20 ">Chargement des titres...</p>
+        <span className="loader  " />
+      </div>
+    );
   }
 
   const classes = className
-    ? `bg-neutral-900 hover:bg-pink-600/30 duration-150 h-64 rounded-md flex-none m-0 py-1 pb-1 px-2 w-56 sm:h-56 sm:w-44 md:h-64 md:w-56 ${className}`
-    : "bg-neutral-900 hover:bg-pink-600/30 duration-150 h-36 rounded-md flex-none m-0 py-1 pb-1 px-2 w-28 sm:h-56 sm:w-44 md:h-64 md:w-56";
+    ? `card-genre bg-neutral-900 hover:bg-pink-600/30 duration-150 h-64 rounded-md flex-none m-0 py-1 pb-1 px-2 w-56 sm:h-56 sm:w-44 md:h-64 md:w-56 ${className}`
+    : "card-genre bg-neutral-900 hover:bg-pink-600/30 duration-150 h-36 rounded-md flex-none m-0 py-1 pb-1 px-2 w-28 sm:h-56 sm:w-44 md:h-64 md:w-56";
 
   return (
     <main className="mt-5">
@@ -81,7 +86,7 @@ export default function GenreDetails({ token, className }) {
               to={`/search/title/${track.id}`}
               className="flex gap-4 bg-neutral-900 rounded-lg hover:bg-pink-600/30 mb-2 sm:mb-0 w-10/12 sm:w-full h-20"
             >
-              <figure className="flex w-full">
+              <figure className="card-title flex w-full">
                 <img
                   src={track.album.images[0].url}
                   alt={track.name}
@@ -92,14 +97,14 @@ export default function GenreDetails({ token, className }) {
                     <h2 className="font-bold text-xs/4 text-white/70 sm:text-base md:text-base truncate">
                       {track.name}
                     </h2>
-                    <h3 className="text-xs/3 truncate">
+                    <h3 className="titleTracks text-xs/3 truncate">
                       {track.artists[0].name}
                     </h3>
-                    <p className="text-[8px] sm:text-xs">
+                    <p className="titleTracks text-[8px] sm:text-xs">
                       {track.album.release_date.slice(0, 4)}
                     </p>
                   </figcaption>
-                  <p className="my-auto font-bold absolute right-0  top-1/4">
+                  <p className="titleTracks my-auto font-bold absolute right-0  top-1/4">
                     {convertNumberMsEnMin(track.duration_ms)}
                   </p>
                 </div>
@@ -124,7 +129,7 @@ export default function GenreDetails({ token, className }) {
                   src={track.album.images[0].url}
                   alt={track.album.name}
                 />
-                <figcaption className="text-center text-white/60 space-y-0.5">
+                <figcaption className=" text-center text-white/60 space-y-0.5">
                   <h2 className="font-bold text-xs/4 text-white/70 sm:text-base md:text-base truncate">
                     {track.album.name}
                   </h2>
@@ -149,7 +154,7 @@ export default function GenreDetails({ token, className }) {
 
       <section>
         <div className="mx-3 flex-col relative md:ml-[236px] mt-2 mb-1 md:pr-5 md:pl-5  ">
-          <h1 className=" mb-4 text sm:text-xl md:text-2xl">Artists</h1>
+          <h1 className=" mb-4 text sm:text-xl md:text-2xl">Artistes</h1>
           <div>
             <div
               ref={sliderRef}
@@ -157,7 +162,11 @@ export default function GenreDetails({ token, className }) {
               className="flex gap-3 overflow-x-auto "
             >
               {tracks.tracks.slice(30, 50).map((track) => (
-                <ArtistImage id={track.artists[0].id} token={token} />
+                <ArtistImage
+                  id={track.artists[0].id}
+                  token={token}
+                  key={`genres${track.id}`}
+                />
               ))}
               <button
                 className="precedent"
