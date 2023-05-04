@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
+  height: 100%;
   background-color: black;
   color: white;
   margin: 0;
@@ -25,6 +26,12 @@ body {
 
 .svgHover:hover {
   stroke: blue;
+}
+
+#radio-gradient {
+  --color-stop: #c60606;
+  --color-mid: #da77f2;
+  --color-bot: #e84492;
 }
 
 #universe {

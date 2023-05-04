@@ -37,7 +37,7 @@ export default function Search({ token }) {
   }, [searchInput]);
 
   return (
-    <main>
+    <main className="min-h-screen">
       <SearchBar query={searchInput} setQuery={setSearchInput} />
       <SearchNavBar />
       <Outlet

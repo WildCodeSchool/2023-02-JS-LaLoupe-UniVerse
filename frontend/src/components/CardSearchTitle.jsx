@@ -21,10 +21,10 @@ export default function CardSearchTitle({
             <h2 className="font-bold text-xs/4 text-white/70 sm:text-base md:text-base truncate">
               {titreName}
             </h2>
-            <h3 className="text-xs/3 truncate">{artist}</h3>
-            <p className="text-[8px] sm:text-xs">{release}</p>
+            <h3 className="titleTracks text-xs/3 truncate">{artist}</h3>
+            <p className="titleTracks text-[8px] sm:text-xs">{release}</p>
           </figcaption>
-          <p className="my-auto font-bold absolute right-0 top-1/4">
+          <p className="titleTracks my-auto font-bold absolute right-0 top-1/4">
             {duration}
           </p>
         </div>

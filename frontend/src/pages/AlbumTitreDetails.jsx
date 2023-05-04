@@ -61,24 +61,24 @@ export default function AlbumTitreDetails({ token }) {
 
   if (!albumTitreDetails) {
     return (
-      <div className="flex  flex-col items-center mt-20  md:ml-36 md:mt-2">
-        <p className=" mb-20 ">Loading album</p>
+      <div className="min-h-screen flex  flex-col items-center mt-20  md:ml-36 md:mt-2">
+        <p className="md:text-xl mb-20 ">Loading album</p>
         <span className="loader  " />
       </div>
     );
   }
   if (!artisteDetail) {
     return (
-      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
-        <p className=" mb-20 ">Loading artist</p>
+      <div className="min-h-screen flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className="md:text-xl mb-20 ">Loading artist</p>
         <span className="loader  " />
       </div>
     );
   }
   if (!recommendationDetails) {
     return (
-      <div className="flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
-        <p className=" mb-20 ">Chargement des recommendations</p>
+      <div className="min-h-screen flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className="md:text-xl mb-20 ">Chargement des recommendations</p>
         <span className="loader  " />
       </div>
     );
@@ -86,8 +86,8 @@ export default function AlbumTitreDetails({ token }) {
 
   return (
     <div>
-      <figure className="flex flex-col mr-4 ml-4 my-5 pb-5 bg-pink-900/20 md:justify-center md:py-12 md:my-12 md:ml-60 lg:ml-80 md:mr-14  ">
-        <div className="  md:bg-pink-600/20 p-8  md:ml-20 md:mr-20 lg:flex lg:gap-8 lg:justify-around">
+      <figure className="card-light rounded-lg flex flex-col mr-4 ml-4 my-5 pb-5 bg-pink-900/20 md:justify-center md:py-12 md:my-12 md:ml-60 lg:ml-80 md:mr-14  ">
+        <div className=" card-light-second rounded-lg  md:bg-pink-600/20 p-8  md:ml-20 md:mr-20 lg:flex lg:gap-8 lg:justify-around">
           <div className="flex justify-center items-center">
             <img
               className=" w-10/12 sm:w-7/12 md:w-auto md:h-auto lg:w-52 lg:h-auto lg:items-center"
@@ -105,12 +105,11 @@ export default function AlbumTitreDetails({ token }) {
               </h2>
               <h3>{albumTitreDetails.id.name}</h3>
               <div className="flex">
-                <p className="text-sm  md:text-lg">
+                <p className="titleTracks text-sm  md:text-lg">
                   {new Date(albumTitreDetails.release_date).getFullYear()}
                 </p>
-                <p className="ml-5 invisible">-</p>
-
-                <p className="invisible md:visible md: md:ml-5 md:text-lg ">
+                <p className="titleTracks ml-5 invisible">-</p>
+                <p className="titleTracks invisible md:visible md: md:ml-5 md:text-lg ">
                   {albumTitreDetails.total_tracks} Titres
                 </p>
               </div>
@@ -134,11 +133,14 @@ export default function AlbumTitreDetails({ token }) {
           {albumTitreDetails.tracks.items.map((item) => (
             <Link to={`/search/title/${item.id}`}>
               <div className="flex justify-between mt-1">
-                <p className="  text-sm md:text-lg md:ml-8 " key={item.id}>
+                <p
+                  className="titleTracks text-sm md:text-lg md:ml-8 "
+                  key={item.id}
+                >
                   {item.track_number} {" . "} {item.name}
                 </p>
 
-                <p className=" text-sm md:text-lg md:mr-24">
+                <p className="titleTracks text-sm md:text-lg md:mr-24">
                   {convertNumberMsEnMin(item.duration_ms)}
                 </p>
               </div>

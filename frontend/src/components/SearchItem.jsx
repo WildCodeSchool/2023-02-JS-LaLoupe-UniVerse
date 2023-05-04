@@ -10,8 +10,8 @@ export default function SearchItem({ value, path }) {
             type="button"
             className={
               isActive
-                ? "card-light w-24 h-10 rounded-lg bg-neutral-900 sm:hover:bg-pink-600/30"
-                : " card-light-item w-24 h-10 rounded-lg bg-pink-600/30 hover:bg-neutral-900 text-white/50"
+                ? "titleTracks card-light w-24 h-10 rounded-lg bg-neutral-900 sm:hover:bg-pink-600/30"
+                : "titleTracks card-light-item w-24 h-10 rounded-lg bg-pink-600/30 hover:bg-neutral-900 text-white/50"
             }
           >
             {value}
