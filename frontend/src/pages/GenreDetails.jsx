@@ -177,7 +177,7 @@ export default function GenreDetails({ token, className }) {
           </div>
         </div>
       </section>
-      <div className=" mb-16 sm:hidden" />
+      <div className=" mb-16 md:hidden" />
     </main>
   );
 }
