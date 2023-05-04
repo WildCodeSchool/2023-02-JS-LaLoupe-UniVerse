@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom";
+import LightMode from "@components/LightMode";
 import headphone from "../assets/headphone_2_line.svg";
 import search from "../assets/search_2_line.svg";
 import radio from "../assets/radio_line.svg";
 
 const NavBar = () => {
   return (
-    <div className="hidden md:block w-screen fixed">
-      <nav className=" absolute inset-y-0 left-0 md:mt-36  text-white/70 space-y-5">
+    <div className=" navBar hidden md:block fixed ">
+      <nav className=" absolute inset-y-0 left-0 md:mt-40  text-white/70 space-y-5">
         <NavLink to="/" className="  ">
           {({ isActive }) => (
             <div
@@ -21,7 +22,7 @@ const NavBar = () => {
                 <img
                   src={headphone}
                   alt="headphones logo"
-                  className="w-8 h-8 mr-5 "
+                  className="logo w-8 h-8 mr-5 "
                 />
               </p>
             </div>
@@ -38,12 +39,16 @@ const NavBar = () => {
             >
               <p className="flex flex-row-reverse text-xl justify-end px-10 py-3">
                 Recherche
-                <img src={search} alt="Loupe logo" className="w-8 h-8 mr-5 " />
+                <img
+                  src={search}
+                  alt="Loupe logo"
+                  className="logo w-8 h-8 mr-5 "
+                />
               </p>
             </div>
           )}
         </NavLink>
-        <NavLink to="/searchfdgfg">
+        <NavLink to="/search">
           {({ isActive }) => (
             <div
               className={
@@ -54,11 +59,16 @@ const NavBar = () => {
             >
               <p className="flex flex-row-reverse text-xl justify-end px-10 py-3">
                 Radio
-                <img src={radio} alt="Radio logo" className="w-8 h-8 mr-5 " />
+                <img
+                  src={radio}
+                  alt="Radio logo"
+                  className="logo w-8 h-8 mr-5 "
+                />
               </p>
             </div>
           )}
         </NavLink>
+        <LightMode />
       </nav>
     </div>
   );
