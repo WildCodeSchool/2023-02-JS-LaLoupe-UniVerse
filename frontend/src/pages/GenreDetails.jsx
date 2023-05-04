@@ -115,7 +115,7 @@ export default function GenreDetails({ token, className }) {
       </section>
 
       <div className=" relative md:ml-[236px] mt-2 md:pr-5 md:pl-5 md:mr-3 mx-3">
-        <h1 className="mb-4  text sm:text-xl md:text-2xl">Albums</h1>
+        <h1 className="md:mb-3  text sm:text-xl md:text-2xl">Albums</h1>
         <div
           ref={sliderListRef}
           id="sliderList"

@@ -137,7 +137,7 @@ export default function AlbumTitreDetails({ token }) {
                   className="titleTracks text-sm md:text-lg md:ml-8 "
                   key={`albumsTitres${item.id}`}
                 >
-                  {item.track_number} {" . "} {item.name}
+                  {item.name}
                 </p>
 
                 <p className="titleTracks text-sm md:text-lg md:mr-24">
