@@ -26,7 +26,7 @@ export default function ArtistImage({ token, id }) {
   }, [id]);
 
   if (!artist) {
-    return <p>Loading artist</p>;
+    return <p>Chargement des artistes...</p>;
   }
 
   return (
@@ -41,7 +41,7 @@ export default function ArtistImage({ token, id }) {
           />
         )}
         <figcaption>
-          <h2 className="font-bold text-xs/4 mt-2 h-8  text-center text-white/70 sm:text-base md:text-xl/3 truncate">
+          <h2 className="font-bold text-xs/4 mt-2 h-8 py-2 text-center text-white/70 sm:text-base md:text-xl/3 truncate">
             {artist.name}
           </h2>
         </figcaption>
