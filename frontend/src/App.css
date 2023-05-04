@@ -25,6 +25,10 @@ body {
   display: none;
 }
 
+.scroller {
+  height: 0;
+}
+
 .svgHover:hover {
   stroke: blue;
 }

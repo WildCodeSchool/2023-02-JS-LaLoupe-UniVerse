@@ -43,7 +43,7 @@ export default function Search({ token }) {
       <Outlet
         context={{ searchResultArtist, searchResultTracks, searchResultAlbum }}
       />
-      <div className=" mb-16 sm:hidden" />
+      <div className=" mb-16 md:hidden" />
     </main>
   );
 }

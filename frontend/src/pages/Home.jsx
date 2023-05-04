@@ -22,7 +22,7 @@ export default function Home({ albumsArray }) {
         dataAlbums={daily[0].tracks.items}
         title="Pour bien commencer la journée"
       />
-      <div className=" mb-16 sm:hidden" />
+      <div className=" mb-16 md:hidden" />
     </main>
   );
 }
