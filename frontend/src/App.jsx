@@ -101,7 +101,7 @@ function App() {
             path="*"
             element={
               <h2 className="text-center text-4xl text-white pt-60">
-                Page Not Found
+                Cette page n'existe pas
               </h2>
             }
           />
