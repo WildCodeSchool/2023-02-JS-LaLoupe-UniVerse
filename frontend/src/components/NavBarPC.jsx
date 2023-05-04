@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import LightMode from "@components/LightMode";
+import LightMode from "./LightMode";
 import headphone from "../assets/headphone_2_line.svg";
 import search from "../assets/search_2_line.svg";
 import radio from "../assets/radio_line.svg";
@@ -48,7 +48,7 @@ const NavBar = () => {
             </div>
           )}
         </NavLink>
-        <NavLink to="/search">
+        <NavLink to="/radio">
           {({ isActive }) => (
             <div
               className={

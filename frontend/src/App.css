@@ -23,6 +23,10 @@ body {
   display: none;
 }
 
+.svgHover:hover {
+  stroke: blue;
+}
+
 #universe {
   display: flex;
   font-family: "Revalia";
