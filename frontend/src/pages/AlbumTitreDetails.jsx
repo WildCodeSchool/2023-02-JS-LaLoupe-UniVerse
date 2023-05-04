@@ -62,7 +62,7 @@ export default function AlbumTitreDetails({ token }) {
   if (!albumTitreDetails) {
     return (
       <div className="min-h-screen flex  flex-col items-center mt-20  md:ml-36 md:mt-2">
-        <p className="md:text-xl mb-20 ">Loading album</p>
+        <p className="md:text-xl mb-20 ">Chargement des albums...</p>
         <span className="loader  " />
       </div>
     );
@@ -70,7 +70,7 @@ export default function AlbumTitreDetails({ token }) {
   if (!artisteDetail) {
     return (
       <div className="min-h-screen flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
-        <p className="md:text-xl mb-20 ">Loading artist</p>
+        <p className="md:text-xl mb-20 ">Chargement des artistes...</p>
         <span className="loader  " />
       </div>
     );
@@ -78,7 +78,7 @@ export default function AlbumTitreDetails({ token }) {
   if (!recommendationDetails) {
     return (
       <div className="min-h-screen flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
-        <p className="md:text-xl mb-20 ">Chargement des recommendations</p>
+        <p className="md:text-xl mb-20 ">Chargement des recommendations...</p>
         <span className="loader  " />
       </div>
     );
@@ -137,7 +137,7 @@ export default function AlbumTitreDetails({ token }) {
                   className="titleTracks text-sm md:text-lg md:ml-8 "
                   key={`albumsTitres${item.id}`}
                 >
-                  {item.track_number} {" . "} {item.name}
+                  {item.name}
                 </p>
 
                 <p className="titleTracks text-sm md:text-lg md:mr-24">

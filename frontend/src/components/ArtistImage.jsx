@@ -26,12 +26,17 @@ export default function ArtistImage({ token, id }) {
   }, [id]);
 
   if (!artist) {
-    return <p>Chargement des artistes...</p>;
+    return (
+      <div className="min-h-screen flex  flex-col items-center mt-20 md:ml-36 md:mt-2">
+        <p className="md:text-xl mb-20 ">Chargement des artistes...</p>
+        <span className="loader  " />
+      </div>
+    );
   }
 
   return (
     <Link to={`/search/artist/${id}`}>
-      <figure className="bg-neutral-900 hover:bg-pink-600/30 duration-150 h-36 rounded-md flex-none m-0 py-1 pb-2 px-2 w-28 sm:h-56 sm:w-44 md:h-64 md:w-56 ">
+      <figure className="card-genre bg-neutral-900 hover:bg-pink-600/30 duration-150 h-36 rounded-md flex-none m-0 py-1 pb-2 px-2 w-28 sm:h-56 sm:w-44 md:h-64 md:w-56 ">
         {artist.images.length > 0 && (
           <img
             className="rounded-full w-24 h-24  md:w-48 md:h-52 m-auto sm:py-2 md:rounded-full sm:w-36 sm:h-36 "

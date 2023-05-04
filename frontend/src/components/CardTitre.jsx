@@ -27,7 +27,7 @@ export default function CardTitre({
           </h2>
           <h3 className="text-xs/3 truncate">{artist}</h3>
           <div className="text-[8px] sm:text-xs flex justify-center">
-            <p className="px-3">{release}</p>
+            <p className="px-3 ml-5">{release}</p>
             <p className="font-bold px-3">{duration}</p>
           </div>
         </figcaption>
