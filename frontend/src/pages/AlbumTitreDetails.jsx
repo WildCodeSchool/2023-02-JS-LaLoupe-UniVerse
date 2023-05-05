@@ -9,6 +9,8 @@ export default function AlbumTitreDetails({ token }) {
   const [recommendationDetails, setRecommendationDetails] = useState();
   const { id } = useParams();
 
+  // fonction pour afficher les millisecondes en "minutes:secondes"
+
   const convertNumberMsEnMin = (number) => {
     const min = Math.floor(number / 60000);
     const reste = number % 60000;
@@ -16,6 +18,8 @@ export default function AlbumTitreDetails({ token }) {
       .toString()
       .padStart(2, "0")}`;
   };
+
+  // appel API pour récupérer les informations de l'album selon son ID
 
   const getOneAlbum = () => {
     const albumParameters = {
@@ -29,6 +33,9 @@ export default function AlbumTitreDetails({ token }) {
       .then((response) => response.json())
       .then((albumData) => {
         setAlbumTitreDetails(albumData);
+
+        // appel API pour récupérer les informations de l'artiste lié à l'album
+
         fetch(
           `https://api.spotify.com/v1/artists/${albumData.artists[0].id}`,
           albumParameters
@@ -38,6 +45,8 @@ export default function AlbumTitreDetails({ token }) {
             setArtisteDetail(artisteData);
           })
           .catch((err) => console.error(err));
+
+        // appel API pour récupérer les recommandations liées à l'artiste
 
         fetch(
           `https://api.spotify.com/v1/recommendations?seed_artists=${albumData.artists[0].id}&seed_tracks=${id}&limit=20&market=FR`,
@@ -52,12 +61,16 @@ export default function AlbumTitreDetails({ token }) {
       .catch((err) => console.error(err));
   };
 
+  // la fonction est appelée à chaque changement d'ID sous réserve d'avoir le token nécessaire
+
   useEffect(() => {
     if (token !== "") {
       getOneAlbum();
       window.scroll(0, 0);
     }
   }, [id]);
+
+  // messages de chargement le temps de récupérer les informations par l'API
 
   if (!albumTitreDetails) {
     return (

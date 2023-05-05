@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 export default function ArtistImage({ token, id }) {
   const [artist, setArtist] = useState();
 
+  // Appel API pour récupérer les informations d'un artiste selon son ID
+
   const getAnArtist = () => {
     const artistParameters = {
       method: "GET",
@@ -19,11 +21,15 @@ export default function ArtistImage({ token, id }) {
       .catch((err) => console.error(err));
   };
 
+  // la fonction est appelée à chaque changement d'ID sous réserve d'avoir le token nécessaire
+
   useEffect(() => {
     if (token !== "") {
       getAnArtist();
     }
   }, [id]);
+
+  // messages de chargement le temps de récupérer les informations par l'API
 
   if (!artist) {
     return (

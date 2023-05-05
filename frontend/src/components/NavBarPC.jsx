@@ -1,3 +1,5 @@
+// NavBar sous forme de menu en version PC
+
 import { NavLink } from "react-router-dom";
 import LightMode from "./LightMode";
 import headphone from "../assets/headphone_2_line.svg";

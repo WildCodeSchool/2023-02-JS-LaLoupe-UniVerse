@@ -30,6 +30,8 @@ function App() {
   });
   const [albums, setAlbums] = useState([]);
 
+  // Appel API pour récupérer le token nécessaire à chaque requête
+
   const getToken = () => {
     fetch("https://accounts.spotify.com/api/token", authParameters)
       .then((result) => result.json())
@@ -38,6 +40,8 @@ function App() {
         localStorage.setItem("accessToken", data.access_token);
       });
   };
+
+  // appel API pour récupérer les 20 nouveautés
 
   const getNewAlbums = () => {
     const albumParameters = {
@@ -60,6 +64,8 @@ function App() {
   useEffect(() => {
     getToken();
   }, []);
+
+  // la fonction est appelée à chaque changement de token
 
   useEffect(() => {
     if (accessToken !== "") {

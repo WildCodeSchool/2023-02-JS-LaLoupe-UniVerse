@@ -8,6 +8,8 @@ export default function SearchAll() {
     useOutletContext();
   const searchTracks = searchResultTracks.slice(0, 6);
 
+  // fonction pour afficher les millisecondes en "minutes:secondes"
+
   const convertNumberMsEnMin = (number) => {
     const min = Math.floor(number / 60000);
     const reste = number % 60000;

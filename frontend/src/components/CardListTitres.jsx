@@ -6,6 +6,8 @@ import arrow from "../assets/FlecheIcons/chevron.png";
 export default function CardListTitres({ dataAlbums, title, id }) {
   const sliderListRef = useRef();
 
+  // fonction pour afficher les millisecondes en "minutes:secondes"
+
   const convertNumberMsEnMin = (number) => {
     const min = Math.floor(number / 60000);
     const reste = number % 60000;
@@ -13,6 +15,9 @@ export default function CardListTitres({ dataAlbums, title, id }) {
       .toString()
       .padStart(2, "0")}`;
   };
+
+  // Carrousel
+
   function scrollLeft() {
     const width = sliderListRef.current.childNodes[0].offsetWidth;
     sliderListRef.current.scrollBy(-(width * 4 + 12), 0);
@@ -22,6 +27,8 @@ export default function CardListTitres({ dataAlbums, title, id }) {
     const width = sliderListRef.current.childNodes[0].offsetWidth;
     sliderListRef.current.scrollBy(width * 4 + 12, 0);
   }
+
+  // Réinitialisation du carrousel à chaque changement d'ID
 
   useEffect(() => {
     scrollLeft();

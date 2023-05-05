@@ -4,18 +4,38 @@ import imgRadio from "../assets/image-radio.jpg";
 import playIcon from "../assets/play.png";
 import pauseIcon from "../assets/pause.png";
 
-export default function CardRadio({ favicon, name, country, url }) {
+export default function CardRadio({
+  favicon,
+  name,
+  country,
+  url,
+  playing,
+  setPlaying,
+}) {
   const [playRadio, setPlayRadio] = useState(false);
 
   const audioRef = useRef();
 
+  // fonction permettant de mettre en lecture ou pause les radios. Permet également de ne pas mettre en lecture deux radios simultanément
+
   const handlePlayRadio = () => {
-    if (playRadio === false) {
-      setPlayRadio(true);
-      audioRef.current.play();
-    } else {
-      setPlayRadio(false);
-      audioRef.current.pause();
+    if (playing === false) {
+      if (playRadio === false) {
+        setPlayRadio(true);
+        audioRef.current.play();
+        setPlaying(true);
+      } else {
+        setPlayRadio(false);
+        audioRef.current.pause();
+        setPlaying(false);
+      }
+    }
+    if (playing === true) {
+      if (playRadio === true) {
+        setPlayRadio(false);
+        audioRef.current.pause();
+        setPlaying(false);
+      }
     }
   };
 
@@ -51,17 +71,19 @@ export default function CardRadio({ favicon, name, country, url }) {
               {playRadio === false ? (
                 <img src={playIcon} alt="play" className=" w-10 sm:w-16 mb-2" />
               ) : (
-                <img
-                  src={pauseIcon}
-                  alt="pause"
-                  className="w-10 sm:w-16 mb-2"
-                />
+                <div className="bg-white/70 rounded-full">
+                  <img
+                    src={pauseIcon}
+                    alt="pause"
+                    className="w-10 sm:w-16 mb-2 "
+                  />
+                </div>
               )}
             </button>
           </div>
         </figcaption>
       </figure>
-      <audio ref={audioRef}>
+      <audio ref={audioRef} preload="none">
         <track default kind="captions" srcLang="fr" src={url} />
         <source src={url} type="audio/mpeg" />
         Your browser does not support this audio format.
@@ -79,4 +101,6 @@ CardRadio.propTypes = {
   name: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
+  playing: PropTypes.bool.isRequired,
+  setPlaying: PropTypes.func.isRequired,
 };

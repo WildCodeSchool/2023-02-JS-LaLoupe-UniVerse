@@ -5,6 +5,9 @@ import arrow from "../assets/FlecheIcons/chevron.png";
 
 export default function CardListArtiste({ dataArtist, title, id }) {
   const sliderRef = useRef();
+
+  // Carrousel
+
   function scrollLeft() {
     const width = sliderRef.current.childNodes[0].offsetWidth;
     sliderRef.current.scrollBy(-(width * 4 + 12), 0);
@@ -14,6 +17,9 @@ export default function CardListArtiste({ dataArtist, title, id }) {
     const width = sliderRef.current.childNodes[0].offsetWidth;
     sliderRef.current.scrollBy(width * 4 + 12, 0);
   }
+
+  // Réinitialisation du carrousel à chaque changement d'ID
+
   useEffect(() => {
     scrollLeft();
     scrollLeft();

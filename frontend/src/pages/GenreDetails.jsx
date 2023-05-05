@@ -9,6 +9,8 @@ export default function GenreDetails({ token, className }) {
   const { genre } = useParams();
   const { id } = useParams();
 
+  // fonction pour afficher les millisecondes en "minutes:secondes"
+
   const convertNumberMsEnMin = (number) => {
     const min = Math.floor(number / 60000);
     const reste = number % 60000;
@@ -16,6 +18,8 @@ export default function GenreDetails({ token, className }) {
       .toString()
       .padStart(2, "0")}`;
   };
+
+  // Carrousel
 
   const sliderListRef = useRef();
 
@@ -41,6 +45,8 @@ export default function GenreDetails({ token, className }) {
     sliderRef.current.scrollBy(width * 4 + 12, 0);
   }
 
+  // appel API pour récupérer les informations de 50 titres selon un genre
+
   const getOneTracks = () => {
     const genreParameters = {
       method: "GET",
@@ -58,11 +64,16 @@ export default function GenreDetails({ token, className }) {
       .catch((err) => console.error(err));
   };
 
+  // la fonction est appelée à chaque changement d'ID sous réserve d'avoir le token nécessaire
+
   useEffect(() => {
     if (token !== "") {
       getOneTracks();
+      window.scroll(0, 0);
     }
   }, [id]);
+
+  // messages de chargement le temps de récupérer les informations par l'API
 
   if (!tracks) {
     return (
@@ -80,7 +91,7 @@ export default function GenreDetails({ token, className }) {
   return (
     <main className="mt-5">
       <section className="sm:flex sm:justify-center md:ml-[236px] mb-2 md:pl-5">
-        <div className="sm:grid sm:grid-cols-2 mr-3 sm:gap-2 flex justify-center flex-wrap md:pr-5 md:pl-5">
+        <div className="sm:grid sm:grid-cols-2 mr-3 sm:gap-2 flex justify-center w-full flex-wrap md:pr-5 md:pl-5">
           {tracks.tracks.slice(0, 10).map((track) => (
             <Link
               to={`/search/title/${track.id}`}
@@ -114,7 +125,7 @@ export default function GenreDetails({ token, className }) {
         </div>
       </section>
 
-      <div className=" relative mt-1 md:ml-[236px] sm:-mt-2 md:pr-5 md:pl-5 md:mr-3 mx-3">
+      <div className=" relative mt-1 md:ml-[236px] sm:mt-2 md:px-5 md:mr-3 mx-3">
         <h1 className="mb-2 text sm:text-xl md:text-2xl">Albums</h1>
         <div
           ref={sliderListRef}
@@ -153,7 +164,7 @@ export default function GenreDetails({ token, className }) {
       </div>
 
       <section>
-        <div className="mx-3 flex-col relative md:ml-[236px] md:pr-5 md:pl-5  ">
+        <div className="mx-3 flex-col relative md:ml-[236px] md:px-5  ">
           <h1 className=" mb-2 text sm:text-xl md:text-2xl">Artistes</h1>
           <div>
             <div

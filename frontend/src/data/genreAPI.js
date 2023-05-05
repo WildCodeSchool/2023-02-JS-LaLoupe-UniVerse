@@ -1,3 +1,5 @@
+// Sélection de genres
+
 const genreAPI = [
   {
     name: "Country",

@@ -11,6 +11,8 @@ export default function TitreDetails({ token }) {
 
   const { id } = useParams();
 
+  // fonction pour afficher les millisecondes en "minutes:secondes"
+
   const convertNumberMsEnMin = (number) => {
     const min = Math.floor(number / 60000);
     const reste = number % 60000;
@@ -18,6 +20,8 @@ export default function TitreDetails({ token }) {
       .toString()
       .padStart(2, "0")}`;
   };
+
+  // appel API pour récupérer les informations d'un titre selon son ID
 
   const getOneTitle = () => {
     const albumParameters = {
@@ -31,6 +35,9 @@ export default function TitreDetails({ token }) {
       .then((response) => response.json())
       .then((titreData) => {
         setTitreDetails(titreData);
+
+        // appel API pour récupérer les informations de l'artiste lié au titre
+
         fetch(
           `https://api.spotify.com/v1/artists/${titreData.artists[0].id}`,
           albumParameters
@@ -40,6 +47,9 @@ export default function TitreDetails({ token }) {
             setArtisteDetail(artisteData);
           })
           .catch((err) => console.error(err));
+
+        // appel API pour récupérer les informations de l'album lié au titre
+
         fetch(
           `https://api.spotify.com/v1/albums/${titreData.album.id}`,
           albumParameters
@@ -49,6 +59,8 @@ export default function TitreDetails({ token }) {
             setAlbumDetails(albumData);
           })
           .then(
+            // appel API pour récupérer les recommendations liées à l'artiste et au titre
+
             fetch(
               `https://api.spotify.com/v1/recommendations?seed_artists=${titreData.artists[0].id}&seed_tracks=${id}&limit=20&market=FR`,
               albumParameters
@@ -64,12 +76,16 @@ export default function TitreDetails({ token }) {
       .catch((err) => console.error(err));
   };
 
+  // la fonction est appelée à chaque changement d'ID sous réserve d'avoir le token nécessaire
+
   useEffect(() => {
     if (token !== "") {
       getOneTitle();
       window.scroll(0, 0);
     }
   }, [id]);
+
+  // messages de chargement le temps de récupérer les informations par l'API
 
   if (!titreDetails) {
     return (
