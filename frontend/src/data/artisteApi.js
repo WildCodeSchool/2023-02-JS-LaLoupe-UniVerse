@@ -1,3 +1,5 @@
+// sélection d'artistes par nos soins
+
 const artisteApi = [
   {
     id: "7kZrDJdqo62iZD6B2UEu7D",

@@ -11,6 +11,8 @@ export default function ArtistDetail({ token }) {
   const [relatedArtist, setRelatedArtist] = useState();
   const { id } = useParams();
 
+  // fonction pour afficher les millisecondes en "minutes:secondes"
+
   const convertNumberMsEnMin = (number) => {
     const min = Math.floor(number / 60000);
     const reste = number % 60000;
@@ -18,6 +20,8 @@ export default function ArtistDetail({ token }) {
       .toString()
       .padStart(2, "0")}`;
   };
+
+  // appel API pour récupérer les informations de l'artiste selon son ID
 
   const getOneArtist = () => {
     const artistParameters = {
@@ -32,6 +36,8 @@ export default function ArtistDetail({ token }) {
       .then((artistData) => setArtist(artistData))
       .catch((err) => console.error(err));
   };
+
+  // appel API pour récupérer les informations d'un titre selon son ID
 
   const getOneTracks = () => {
     const artistParameters = {
@@ -50,6 +56,8 @@ export default function ArtistDetail({ token }) {
       .catch((err) => console.error(err));
   };
 
+  // appel API pour récupérer les informations de l'album selon son ID
+
   const getOneAlbum = () => {
     const artistParameters = {
       method: "GET",
@@ -66,6 +74,8 @@ export default function ArtistDetail({ token }) {
       .then((albumData) => setAlbum(albumData))
       .catch((err) => console.error(err));
   };
+
+  // appel API pour récupérer les informations d'artistes recommandés selon un artiste via son ID
 
   const getRelatedArtist = () => {
     const artistParameters = {
@@ -84,6 +94,8 @@ export default function ArtistDetail({ token }) {
       .catch((err) => console.error(err));
   };
 
+  // les fonctions sont appelées à chaque changement d'ID sous réserve d'avoir le token nécessaire
+
   useEffect(() => {
     if (token !== "") {
       getOneArtist();
@@ -93,6 +105,8 @@ export default function ArtistDetail({ token }) {
       window.scroll(0, 0);
     }
   }, [id]);
+
+  // messages de chargement le temps de récupérer les informations par l'API
 
   if (!artist) {
     return (

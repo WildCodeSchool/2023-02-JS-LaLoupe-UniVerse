@@ -8,6 +8,8 @@ export default function Radio() {
   const [searchInput, setSearchInput] = useState("");
   const [playing, setPlaying] = useState(false);
 
+  // appel API pour récupérer 20 radios selon leur nombre de clics
+
   const getAllRadio = () => {
     fetch("http://91.132.145.114/json/stations/topclick?limit=20")
       .then((response) => response.json())
@@ -15,6 +17,8 @@ export default function Radio() {
         setRadio(data);
       });
   };
+
+  // appel API pour récupérer un tableu contenant les radios selon une recherche
 
   const getResultsRadio = () => {
     fetch(
@@ -26,15 +30,21 @@ export default function Radio() {
       });
   };
 
+  // la fonction est appelée au chargement de la page
+
   useEffect(() => {
     getAllRadio();
   }, []);
+
+  // la fonction de recherche est appelée à chaque changement dans la barre de recherche
 
   useEffect(() => {
     if (searchInput !== "") {
       getResultsRadio();
     }
   }, [searchInput]);
+
+  // messages de chargement le temps de récupérer les informations par l'API
 
   if (!radios) {
     return (

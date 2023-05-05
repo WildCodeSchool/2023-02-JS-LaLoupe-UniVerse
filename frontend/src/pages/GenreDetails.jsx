@@ -9,6 +9,8 @@ export default function GenreDetails({ token, className }) {
   const { genre } = useParams();
   const { id } = useParams();
 
+  // fonction pour afficher les millisecondes en "minutes:secondes"
+
   const convertNumberMsEnMin = (number) => {
     const min = Math.floor(number / 60000);
     const reste = number % 60000;
@@ -16,6 +18,8 @@ export default function GenreDetails({ token, className }) {
       .toString()
       .padStart(2, "0")}`;
   };
+
+  // Carrousel
 
   const sliderListRef = useRef();
 
@@ -41,6 +45,8 @@ export default function GenreDetails({ token, className }) {
     sliderRef.current.scrollBy(width * 4 + 12, 0);
   }
 
+  // appel API pour récupérer les informations de 50 titres selon un genre
+
   const getOneTracks = () => {
     const genreParameters = {
       method: "GET",
@@ -58,12 +64,16 @@ export default function GenreDetails({ token, className }) {
       .catch((err) => console.error(err));
   };
 
+  // la fonction est appelée à chaque changement d'ID sous réserve d'avoir le token nécessaire
+
   useEffect(() => {
     if (token !== "") {
       getOneTracks();
       window.scroll(0, 0);
     }
   }, [id]);
+
+  // messages de chargement le temps de récupérer les informations par l'API
 
   if (!tracks) {
     return (

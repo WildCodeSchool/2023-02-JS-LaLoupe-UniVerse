@@ -16,6 +16,8 @@ export default function CardRadio({
 
   const audioRef = useRef();
 
+  // fonction permettant de mettre en lecture ou pause les radios. Permet également de ne pas mettre en lecture deux radios simultanément
+
   const handlePlayRadio = () => {
     if (playing === false) {
       if (playRadio === false) {

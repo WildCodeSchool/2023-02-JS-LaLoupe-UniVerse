@@ -11,6 +11,7 @@ export default function Home({ albumsArray }) {
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
+
   return (
     <main>
       {albumsArray.length > 0 && (
