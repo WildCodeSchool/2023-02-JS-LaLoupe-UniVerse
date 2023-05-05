@@ -5,7 +5,7 @@ export default function SearchAlbum() {
   const { searchResultAlbum } = useOutletContext();
 
   return (
-    <div className="flex justify-evenly flex-wrap md:ml-[236px] my-10 md:mr-3 mx-3 gap-3">
+    <div className="min-h-screen flex justify-evenly flex-wrap md:ml-[180px] lg:ml-[236px] my-10 md:mr-3 mx-3 gap-3">
       {searchResultAlbum.map((album) => (
         <CardAlbumTitre
           key={album.id}

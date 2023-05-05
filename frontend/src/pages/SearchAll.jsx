@@ -8,6 +8,8 @@ export default function SearchAll() {
     useOutletContext();
   const searchTracks = searchResultTracks.slice(0, 6);
 
+  // fonction pour afficher les millisecondes en "minutes:secondes"
+
   const convertNumberMsEnMin = (number) => {
     const min = Math.floor(number / 60000);
     const reste = number % 60000;
@@ -18,11 +20,13 @@ export default function SearchAll() {
 
   return (
     <div>
-      <section className="sm:flex sm:justify-center md:ml-[236px] mb-6 md:pl-5">
+      <section className=" sm:flex sm:justify-center md:ml-[180px] lg:ml-[236px] mb-6 md:pl-5">
         <figure>
           {searchResultAlbum.length > 0 && (
-            <figcaption className="mb-5 mx-10">
-              <h2>Album</h2>
+            <figcaption>
+              <h2 className="mb-4 text-sm sm:text-xl md:text-2xl font-bold">
+                Album
+              </h2>
             </figcaption>
           )}
           {searchResultAlbum.length > 0 && (
@@ -39,7 +43,9 @@ export default function SearchAll() {
         <aside className="w-full ml-3 mt-5 sm:mt-0">
           {searchResultTracks.length > 0 && (
             <figcaption className="mb-5 col-span-2 mx-10">
-              <h2>Titres</h2>
+              <h2 className="mb-4 text-sm sm:text-xl md:text-2xl font-bold">
+                Titres
+              </h2>
             </figcaption>
           )}
           <div className="sm:grid sm:grid-cols-2 mr-3 sm:gap-2 flex justify-center flex-wrap md:pr-5 md:pl-5">

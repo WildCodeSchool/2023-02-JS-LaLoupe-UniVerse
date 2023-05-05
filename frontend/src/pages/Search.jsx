@@ -10,6 +10,8 @@ export default function Search({ token }) {
   const [searchResultTracks, setSearchResultTracks] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
+  // appel API pour récupérer 20 résultats (20 artistes, 20 albums, 20 titres) selon la recherche effectuée
+
   const getAllResults = () => {
     const searchParameters = {
       method: "GET",
@@ -31,20 +33,26 @@ export default function Search({ token }) {
   };
 
   useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
+
+  // la fonction est appelée à chaque changement dans la barre de recherche
+
+  useEffect(() => {
     if (searchInput !== "") {
       getAllResults();
     }
   }, [searchInput]);
 
   return (
-    <>
+    <main className="min-h-screen">
       <SearchBar query={searchInput} setQuery={setSearchInput} />
       <SearchNavBar />
       <Outlet
         context={{ searchResultArtist, searchResultTracks, searchResultAlbum }}
       />
-      <div className=" mb-16 sm:hidden" />
-    </>
+      <div className=" mb-16 md:hidden" />
+    </main>
   );
 }
 

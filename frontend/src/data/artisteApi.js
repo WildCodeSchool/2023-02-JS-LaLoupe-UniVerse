@@ -1,3 +1,5 @@
+// sélection d'artistes par nos soins
+
 const artisteApi = [
   {
     id: "7kZrDJdqo62iZD6B2UEu7D",
@@ -42,7 +44,7 @@ const artisteApi = [
     ],
   },
   {
-    id: "sMHU0vu01xrz1gnNrNry",
+    id: "07sMHU0vu01xrz1gnNrNry",
     name: "Larusso",
     images: [
       {
@@ -63,7 +65,7 @@ const artisteApi = [
     ],
   },
   {
-    id: "6H0LnhDF6W7g2H234i6z3Q",
+    id: "6EysjvvcafloXNdLkwuGLm",
     name: "Tragédie",
     images: [
       {
@@ -84,7 +86,7 @@ const artisteApi = [
     ],
   },
   {
-    id: "4HxvnrF7cU4fzdlWTKQmio",
+    id: "6ItMujsGa113JYrjlfrZXR",
     name: "Jeanne Mas",
     images: [
       {
@@ -105,19 +107,30 @@ const artisteApi = [
     ],
   },
   {
-    id: "1c5BpTs5oCmEMDrJUUnIHl",
+    id: "6kBjAFKyd0he7LiA5GQ3Gz",
     name: "Aqua",
     images: [
       {
-        url: "https://www.melody.tv/wp-content/uploads/2021/111836-aqua_se_reforme_pour_les_20_ans_de_barbie_girl.jpg",
+        url: "https://i.scdn.co/image/ab6761610000e5eb54cd560d17307a51f3dc278a",
         height: 640,
         width: 640,
+      },
+      {
+        url: "https://i.scdn.co/image/ab6761610000517454cd560d17307a51f3dc278a",
+        height: 320,
+        width: 320,
+      },
+      {
+        url: "https://i.scdn.co/image/ab6761610000f17854cd560d17307a51f3dc278a",
+        height: 160,
+        width: 160,
       },
     ],
   },
   {
-    id: "0wEvWMQRqaXcgnrZv6KtyL",
+    id: "0uq5PttqEjj3IH1bzwcrXF",
     name: "Spice Girls",
+
     images: [
       {
         url: "https://i.scdn.co/image/ab6761610000e5ebcf4a1dced6258416eb219e36",

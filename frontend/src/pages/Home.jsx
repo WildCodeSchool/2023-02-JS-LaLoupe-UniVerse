@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 import CardListGenre from "../components/CardListGenre";
 import CardList from "../components/CardList";
 import CardListTitres from "../components/CardListTitres";
@@ -7,6 +8,10 @@ import artisteApi from "../data/artisteApi";
 import daily from "../data/dailyXavier";
 
 export default function Home({ albumsArray }) {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
+
   return (
     <main>
       {albumsArray.length > 0 && (
@@ -22,8 +27,7 @@ export default function Home({ albumsArray }) {
         dataAlbums={daily[0].tracks.items}
         title="Pour bien commencer la journée"
       />
-
-      <div className=" mb-16 sm:hidden" />
+      <div className=" mb-16 md:hidden" />
     </main>
   );
 }

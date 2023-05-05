@@ -1,3 +1,5 @@
+// NavBar version mobile et tablette
+
 import { NavLink } from "react-router-dom";
 import headphone from "../assets/headphone_2_line.svg";
 import search from "../assets/search_2_line.svg";
@@ -42,7 +44,7 @@ const NavBar = () => {
             </div>
           )}
         </NavLink>
-        <NavLink to="/searchrtbgd">
+        <NavLink to="/radio">
           {({ isActive }) => (
             <div
               className={

@@ -1,10 +1,12 @@
+// Sélection de genres
+
 const genreAPI = [
   {
     name: "Country",
     image: "/src/assets/ImgMusic/country-music.jpg",
   },
   {
-    name: "French Music",
+    name: "French",
     image: "/src/assets/ImgMusic/french-music.jpg",
   },
   {
@@ -20,7 +22,7 @@ const genreAPI = [
     image: "/src/assets/ImgMusic/jazz-music.jpg",
   },
   {
-    name: "Rap",
+    name: "Gospel",
     image: "/src/assets/ImgMusic/rap-music.jpg",
   },
   {

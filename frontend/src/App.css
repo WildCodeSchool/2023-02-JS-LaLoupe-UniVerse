@@ -3,10 +3,13 @@
 @tailwind utilities;
 
 body {
+  height: 100%;
   background-color: black;
   color: white;
   margin: 0;
+  font-family: "Exo", sans-serif;
 }
+
 @font-face {
   font-family: "Revalia";
   src: url("../src/assets/Revalia/Revalia-Regular.ttf");
@@ -15,10 +18,25 @@ body {
 ::-webkit-scrollbar {
   background: transparent;
   height: 10px;
+  width: 0;
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
   display: none;
+}
+
+.scroller {
+  height: 0;
+}
+
+.svgHover:hover {
+  stroke: blue;
+}
+
+#radio-gradient {
+  --color-stop: #c60606;
+  --color-mid: #da77f2;
+  --color-bot: #e84492;
 }
 
 #universe {
@@ -32,7 +50,6 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 .degrade {
   display: flex;
   position: absolute;
@@ -44,29 +61,39 @@ body {
 .opaque1 {
   background-color: rgb(0, 0, 0);
   width: 50px;
-  height: 60px;
+  height: 54px;
   color: transparent;
   opacity: 0.3;
 }
+
+.light .opaque1 {
+  display: none;
+}
+
 .opaque2 {
   background-color: rgb(0, 0, 0);
   width: 60px;
   color: transparent;
   opacity: 0.4;
-  height: 60px;
+  height: 54px;
+}
+
+.light .opaque2 {
+  display: none;
 }
 
 .arrow {
   display: none;
 }
 
-@media screen and (min-width: 768px) {
-  ::-webkit-scrollbar-thumb:horizontal {
-    display: block;
-    /* background-color: rgba(94, 92, 92, 0.81);
-    border-radius: 10px; */
-  }
+.footer {
+  display: none;
+}
 
+@media screen and (min-width: 768px) {
+  .footer {
+    display: block;
+  }
   .precedent,
   .suivant {
     position: absolute;
