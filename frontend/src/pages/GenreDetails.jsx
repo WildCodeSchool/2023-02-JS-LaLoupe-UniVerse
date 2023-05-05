@@ -61,6 +61,7 @@ export default function GenreDetails({ token, className }) {
   useEffect(() => {
     if (token !== "") {
       getOneTracks();
+      window.scroll(0, 0);
     }
   }, [id]);
 
@@ -80,7 +81,7 @@ export default function GenreDetails({ token, className }) {
   return (
     <main className="mt-5">
       <section className="sm:flex sm:justify-center md:ml-[236px] mb-2 md:pl-5">
-        <div className="sm:grid sm:grid-cols-2 mr-3 sm:gap-2 flex justify-center flex-wrap md:pr-5 md:pl-5">
+        <div className="sm:grid sm:grid-cols-2 mr-3 sm:gap-2 flex justify-center w-full flex-wrap md:pr-5 md:pl-5">
           {tracks.tracks.slice(0, 10).map((track) => (
             <Link
               to={`/search/title/${track.id}`}
@@ -114,7 +115,7 @@ export default function GenreDetails({ token, className }) {
         </div>
       </section>
 
-      <div className=" relative mt-1 md:ml-[236px] sm:-mt-2 md:pr-5 md:pl-5 md:mr-3 mx-3">
+      <div className=" relative mt-1 md:ml-[236px] sm:mt-2 md:px-5 md:mr-3 mx-3">
         <h1 className="mb-2 text sm:text-xl md:text-2xl">Albums</h1>
         <div
           ref={sliderListRef}
@@ -153,7 +154,7 @@ export default function GenreDetails({ token, className }) {
       </div>
 
       <section>
-        <div className="mx-3 flex-col relative md:ml-[236px] md:pr-5 md:pl-5  ">
+        <div className="mx-3 flex-col relative md:ml-[236px] md:px-5  ">
           <h1 className=" mb-2 text sm:text-xl md:text-2xl">Artistes</h1>
           <div>
             <div

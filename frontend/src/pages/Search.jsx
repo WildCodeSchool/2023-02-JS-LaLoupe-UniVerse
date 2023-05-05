@@ -31,6 +31,10 @@ export default function Search({ token }) {
   };
 
   useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (searchInput !== "") {
       getAllResults();
     }

@@ -6,6 +6,7 @@ import CardRadio from "../components/CardRadio";
 export default function Radio() {
   const [radios, setRadio] = useState();
   const [searchInput, setSearchInput] = useState("");
+  const [playing, setPlaying] = useState(false);
 
   const getAllRadio = () => {
     fetch("http://91.132.145.114/json/stations/topclick?limit=20")
@@ -58,6 +59,8 @@ export default function Radio() {
               name={radio.name}
               country={radio.country}
               url={radio.url}
+              playing={playing}
+              setPlaying={setPlaying}
             />
           </div>
         ))}
