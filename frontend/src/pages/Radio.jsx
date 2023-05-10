@@ -11,7 +11,7 @@ export default function Radio() {
   // appel API pour récupérer 20 radios selon leur nombre de clics
 
   const getAllRadio = () => {
-    fetch("http://91.132.145.114/json/stations/topclick?limit=20")
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/stations`)
       .then((response) => response.json())
       .then((data) => {
         setRadio(data);
@@ -22,7 +22,7 @@ export default function Radio() {
 
   const getResultsRadio = () => {
     fetch(
-      `http://91.132.145.114/json/stations/search?name=${searchInput}&limit=20`
+      `${import.meta.env.VITE_BACKEND_URL}/api/stations?name=${searchInput}`
     )
       .then((response) => response.json())
       .then((SearchData) => {
